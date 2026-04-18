@@ -1,0 +1,682 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Atelier - Booking Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#374c56",
+              "inverse-on-surface": "#2f3133",
+              "on-error": "#690005",
+              "inverse-primary": "#004ee8",
+              "on-secondary-fixed-variant": "#354a53",
+              "on-tertiary-container": "#4f3d00",
+              "on-background": "#e2e2e5",
+              "surface-container-low": "#1a1c1e",
+              "on-secondary-fixed": "#071e27",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-surface-variant": "#c3c5d8",
+              error: "#ffb4ab",
+              "surface-container": "#1e2022",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#dce1ff",
+              "on-surface": "#e2e2e5",
+              "error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#574500",
+              "surface-tint": "#b6c4ff",
+              "on-tertiary": "#3c2f00",
+              "surface-bright": "#38393c",
+              "inverse-surface": "#e2e2e5",
+              surface: "#121416",
+              "on-primary-fixed": "#001550",
+              secondary: "#b4cad6",
+              primary: "#b6c4ff",
+              "tertiary-fixed-dim": "#e9c349",
+              "tertiary-fixed": "#ffe088",
+              "outline-variant": "#434656",
+              "on-tertiary-fixed": "#241a00",
+              "on-secondary-container": "#a6bcc7",
+              "on-primary-fixed-variant": "#003ab3",
+              tertiary: "#e9c349",
+              "secondary-fixed": "#cfe6f2",
+              outline: "#8d90a2",
+              "on-secondary": "#1e333c",
+              "tertiary-container": "#cca730",
+              "surface-dim": "#121416",
+              "secondary-fixed-dim": "#b4cad6",
+              "surface-container-highest": "#333537",
+              "surface-container-high": "#282a2c",
+              "on-primary-container": "#f7f5ff",
+              "surface-container-lowest": "#0c0e10",
+              "primary-container": "#2962ff",
+              "surface-variant": "#333537",
+              "on-primary": "#002780",
+              background: "#121416",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Manrope", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface">
+    <!-- SideNavBar -->
+    <aside
+      class="hidden lg:flex fixed left-0 top-0 h-full w-64 bg-[#121416] flex-col py-10 px-6 z-40 border-r border-outline-variant/10"
+    >
+      <div class="mb-12">
+        <div
+          class="text-xl font-black text-[#e2e2e5] font-['Manrope'] uppercase tracking-[0.1em] mb-1"
+          style=""
+        >
+          THE ATELIER
+        </div>
+        <div
+          class="text-[10px] text-tertiary uppercase tracking-[0.2em] font-bold font-['Inter']"
+          style=""
+        >
+          Premium Barbering
+        </div>
+      </div>
+      <nav class="flex flex-col gap-2 flex-grow">
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 hover:bg-[#1a1c1e] hover:text-[#e2e2e5] rounded-lg transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard" style=""
+            >dashboard</span
+          >
+          <span class="" style="">Overview</span>
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 hover:bg-[#1a1c1e] hover:text-[#e2e2e5] rounded-lg transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span
+            class="material-symbols-outlined"
+            data-icon="calendar_today"
+            style=""
+            >calendar_today</span
+          >
+          <span class="" style="">Schedule</span>
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 hover:bg-[#1a1c1e] hover:text-[#e2e2e5] rounded-lg transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span
+            class="material-symbols-outlined"
+            data-icon="content_cut"
+            style=""
+            >content_cut</span
+          >
+          <span class="" style="">Services</span>
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e9c349] bg-[#1a1c1e] rounded-lg px-4 py-3 transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span
+            class="material-symbols-outlined"
+            data-icon="event_note"
+            style=""
+            >event_note</span
+          >
+          <span class="" style="">Bookings</span>
+        </a>
+      </nav>
+      <div class="mt-auto pt-8">
+        <button
+          class="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-bold text-sm tracking-tight mb-6 flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95"
+          style=""
+        >
+          <span class="material-symbols-outlined text-sm" style="">add</span>
+          New Appointment
+        </button>
+        <div
+          class="flex items-center gap-3 mb-6 border-t border-outline-variant/10 pt-6"
+        >
+          <img
+            alt="Barber Profile Avatar"
+            class="w-10 h-10 rounded-full border border-outline-variant/15"
+            data-alt="Professional barber with sharp beard and stylish haircut in a moody atelier setting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCImgBAeMcTLsHvgmFqKKaj-N1l9_9JozQ7onrjlSCoYimSgOdfjNAqcezBgAaxa-KkMxeXnYATp0xhRHHL8uaQYn1Dhu43mY08RrS1Z65JXeyXfepJb4REbqxK7GJ7fU3d5ov9edshQWGeOmI6FhzDoH4YpF9KOLqLsKtweKeI1MI9FTxhFBZ2qD0JTW40Rf7s3JLSVFmdbdHSB2rgpcdnLSjWV-IIDuPnYyLEg1baFw62jMuaax7l6nn2Dp4UOODne8TLrGzsU2g"
+            style=""
+          />
+          <div class="flex flex-col">
+            <span
+              class="text-xs font-bold text-on-surface font-['Inter']"
+              style=""
+              >Alex River</span
+            >
+            <span
+              class="text-[10px] text-outline uppercase tracking-wider font-['Inter']"
+              style=""
+              >Master Barber</span
+            >
+          </div>
+        </div>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 hover:text-error transition-colors font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined" data-icon="logout" style=""
+            >logout</span
+          >
+          <span class="" style="">Logout</span>
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="lg:ml-64 p-10 min-h-screen bg-surface">
+      <div class="max-w-6xl mx-auto">
+        <!-- Header Section -->
+        <div
+          class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6"
+        >
+          <div>
+            <span
+              class="text-tertiary font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block font-['Inter']"
+              style=""
+              >Management Portal</span
+            >
+            <h1
+              class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface font-['Manrope']"
+              style=""
+            >
+              Bookings.
+            </h1>
+          </div>
+          <div class="flex gap-4">
+            <div
+              class="bg-surface-container-low px-6 py-3 rounded-xl flex items-center gap-3 border border-outline-variant/5"
+            >
+              <span class="material-symbols-outlined text-primary" style=""
+                >calendar_month</span
+              >
+              <span class="text-sm font-medium font-['Inter']" style=""
+                >October 24, 2023</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-low px-6 py-3 rounded-xl flex items-center gap-3 border border-outline-variant/5"
+            >
+              <span class="material-symbols-outlined text-tertiary" style=""
+                >group</span
+              >
+              <span class="text-sm font-medium font-['Inter']" style=""
+                >12 Appointments</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Dashboard Filter/Search -->
+        <div class="mb-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="md:col-span-2 relative group">
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors"
+              style=""
+              >search</span
+            >
+            <input
+              class="w-full bg-surface-container-lowest border-outline-variant/15 border focus:border-primary/50 focus:ring-0 rounded-xl py-4 pl-12 text-sm text-on-surface transition-all placeholder:text-outline/50 font-['Inter']"
+              placeholder="Search client name or service..."
+              type="text"
+            />
+          </div>
+          <div
+            class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl flex items-center px-4"
+          >
+            <select
+              class="bg-transparent border-none focus:ring-0 w-full text-sm font-medium text-on-surface font-['Inter']"
+            >
+              <option class="bg-surface-container">All Services</option>
+              <option class="bg-surface-container">Executive Cut</option>
+              <option class="bg-surface-container">Beard Sculpt</option>
+              <option class="bg-surface-container">Full Atelier Ritual</option>
+            </select>
+          </div>
+          <div
+            class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl flex items-center px-4"
+          >
+            <select
+              class="bg-transparent border-none focus:ring-0 w-full text-sm font-medium text-on-surface font-['Inter']"
+            >
+              <option class="bg-surface-container">Any Status</option>
+              <option class="bg-surface-container">Pending</option>
+              <option class="bg-surface-container">Confirmed</option>
+              <option class="bg-surface-container">Completed</option>
+            </select>
+          </div>
+        </div>
+        <!-- Editorial Table/List -->
+        <div class="space-y-4">
+          <!-- List Header (Desktop Only) -->
+          <div
+            class="hidden md:grid grid-cols-12 px-8 py-2 text-[10px] uppercase tracking-[0.2em] font-black text-outline font-['Inter']"
+          >
+            <div class="col-span-4" style="">Client / Service</div>
+            <div class="col-span-2" style="">Time</div>
+            <div class="col-span-2" style="">Price</div>
+            <div class="col-span-2 text-center" style="">Status</div>
+            <div class="col-span-2 text-right" style="">Actions</div>
+          </div>
+          <!-- Booking Item 1: Pending -->
+          <div
+            class="bg-surface-container-low hover:bg-surface-container-high transition-all rounded-xl overflow-hidden shadow-sm group border border-outline-variant/5"
+          >
+            <div
+              class="grid grid-cols-1 md:grid-cols-12 items-center p-6 md:p-8 gap-6"
+            >
+              <div class="col-span-1 md:col-span-4 flex items-center gap-6">
+                <div class="relative">
+                  <img
+                    class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    data-alt="Close up portrait of a young man with a sharp undercut hairstyle and well-groomed stubble"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbPIgapwHblNqMUcBO0kKamuImymNYBDNQqJCs6USxAjh9z8RMTGR342AABFvN0cKqHqI8iP_kt9-fi-5CirG_U862tJKtXly_i94XrI28nmj8qyiLeCOR0aItuFFIxMAzjMD_Ar15A2RcxgNYYq1k9NkS0rmQw4twOH1AaJ8JYSsaNut9GmUve_3c5H330vCEI6HHDu4nWA9quLg_97ZVjQQVVJbT_5LPq4TT9un0sRGUjBqASFACYsgQjsQlS8K4jCd7Fg-EQqA"
+                    style=""
+                  />
+                  <div
+                    class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary rounded-full border-2 border-surface-container-low"
+                  ></div>
+                </div>
+                <div>
+                  <h3
+                    class="text-xl font-extrabold tracking-tight font-['Manrope']"
+                    style=""
+                  >
+                    Julian Thorne
+                  </h3>
+                  <p
+                    class="text-sm text-tertiary font-bold tracking-widest uppercase text-[10px] mt-1 font-['Inter']"
+                    style=""
+                  >
+                    Full Atelier Ritual
+                  </p>
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <div class="flex flex-col">
+                  <span class="text-lg font-bold font-['Manrope']" style=""
+                    >10:30 AM</span
+                  >
+                  <span class="text-xs text-outline font-['Inter']" style=""
+                    >60 min session</span
+                  >
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <span
+                  class="text-lg font-bold text-on-surface font-['Manrope']"
+                  style=""
+                  >$85.00</span
+                >
+              </div>
+              <div class="col-span-1 md:col-span-2 text-center">
+                <span
+                  class="bg-surface-container-highest text-tertiary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border border-tertiary/20 font-['Inter']"
+                  style=""
+                  >Pending</span
+                >
+              </div>
+              <div class="col-span-1 md:col-span-2 flex justify-end gap-2">
+                <button
+                  class="w-10 h-10 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center"
+                  style=""
+                  title="Confirm Appointment"
+                >
+                  <span class="material-symbols-outlined text-sm" style=""
+                    >check</span
+                  >
+                </button>
+                <button
+                  class="w-10 h-10 rounded-xl bg-error/10 text-error hover:bg-error hover:text-on-error transition-all flex items-center justify-center"
+                  style=""
+                  title="Reject Appointment"
+                >
+                  <span class="material-symbols-outlined text-sm" style=""
+                    >close</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Booking Item 2: Confirmed -->
+          <div
+            class="bg-surface-container-low hover:bg-surface-container-high transition-all rounded-xl overflow-hidden shadow-sm group border border-outline-variant/5"
+          >
+            <div
+              class="grid grid-cols-1 md:grid-cols-12 items-center p-6 md:p-8 gap-6"
+            >
+              <div class="col-span-1 md:col-span-4 flex items-center gap-6">
+                <div class="relative">
+                  <img
+                    class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    data-alt="Mature man with sophisticated graying beard and pompadour haircut in dramatic lighting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCybqaaPzRvC2DhRH9NryjhD_AxyEyx6BMx3dK9mNloPfOTj-bw413oO0fQyjvFbTQDY1LVreATz9vykGChEHP17OGEupdipi4Ctw74uFAMuyjuF_yTtMuAs-SYXhpghuRVJG7MQuNa3ptF_8otWxFb-GEKpq7_r7xS1ex0WcfCGUGH6piwDv6UMCnGy8kBPQKDH6yLs_qOK68fWP4i17aojzdS7PUWqyTzf_RgLhsEcjRaA2xdCd-S5mfF-h8HGuGZ-mE1yigqR2w"
+                    style=""
+                  />
+                  <div
+                    class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary rounded-full border-2 border-surface-container-low"
+                  ></div>
+                </div>
+                <div>
+                  <h3
+                    class="text-xl font-extrabold tracking-tight font-['Manrope']"
+                    style=""
+                  >
+                    Elias Vance
+                  </h3>
+                  <p
+                    class="text-sm text-outline font-bold tracking-widest uppercase text-[10px] mt-1 font-['Inter']"
+                    style=""
+                  >
+                    Executive Haircut
+                  </p>
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <div class="flex flex-col">
+                  <span class="text-lg font-bold font-['Manrope']" style=""
+                    >12:00 PM</span
+                  >
+                  <span class="text-xs text-outline font-['Inter']" style=""
+                    >45 min session</span
+                  >
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <span
+                  class="text-lg font-bold text-on-surface font-['Manrope']"
+                  style=""
+                  >$55.00</span
+                >
+              </div>
+              <div class="col-span-1 md:col-span-2 text-center">
+                <span
+                  class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest font-['Inter']"
+                  style=""
+                  >Confirmed</span
+                >
+              </div>
+              <div class="col-span-1 md:col-span-2 flex justify-end gap-2">
+                <button
+                  class="px-6 h-10 rounded-xl bg-primary-container text-on-primary-container text-[10px] font-black uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all font-['Inter']"
+                  style=""
+                >
+                  Mark Completed
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Booking Item 3: Completed -->
+          <div
+            class="bg-surface-container-lowest opacity-60 rounded-xl overflow-hidden group border border-outline-variant/5"
+          >
+            <div
+              class="grid grid-cols-1 md:grid-cols-12 items-center p-6 md:p-8 gap-6"
+            >
+              <div class="col-span-1 md:col-span-4 flex items-center gap-6">
+                <div class="relative">
+                  <img
+                    class="w-16 h-16 rounded-xl object-cover grayscale"
+                    data-alt="Young professional man with tight buzz cut and designer stubble looking away from camera"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDycD-OcN123IDGUgrUiamV6z4QSsu3zcZ4-Lii2EjKE_fpWXe9CcuKjuIPIipRp-tmxKpBzPGFMWOS0z2-jL65HC27v9dczGD4VREUFqLfCo1XO0DI0lEemATXZMQBGnpf-S2_UgApAGGuhJXKamqcUlYQtFNAv_LbkiertVMT1lx_gGV_6eJxvaa14nUPfB-ClnnMIVFg3G2bbv-95DHmKWsszZpU1AXPmKeG8xqvh9JSND-VKMi-4lMtKPaciJd0ofMMIHYOx9k"
+                    style=""
+                  />
+                </div>
+                <div>
+                  <h3
+                    class="text-xl font-extrabold tracking-tight line-through font-['Manrope']"
+                    style=""
+                  >
+                    Marcus Reed
+                  </h3>
+                  <p
+                    class="text-sm text-outline font-bold tracking-widest uppercase text-[10px] mt-1 font-['Inter']"
+                    style=""
+                  >
+                    Beard Sculpt &amp; Fade
+                  </p>
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <div class="flex flex-col">
+                  <span class="text-lg font-bold font-['Manrope']" style=""
+                    >09:00 AM</span
+                  >
+                  <span class="text-xs text-outline font-['Inter']" style=""
+                    >Completed</span
+                  >
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <span
+                  class="text-lg font-bold text-on-surface font-['Manrope']"
+                  style=""
+                  >$45.00</span
+                >
+              </div>
+              <div class="col-span-1 md:col-span-2 text-center">
+                <span
+                  class="bg-outline-variant/10 text-outline px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest font-['Inter']"
+                  style=""
+                  >Finished</span
+                >
+              </div>
+              <div class="col-span-1 md:col-span-2 flex justify-end gap-2">
+                <button
+                  class="w-10 h-10 rounded-xl bg-surface-container-high text-outline hover:text-on-surface transition-all flex items-center justify-center"
+                  style=""
+                  title="View Receipt"
+                >
+                  <span class="material-symbols-outlined text-sm" style=""
+                    >receipt_long</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Booking Item 4: Pending -->
+          <div
+            class="bg-surface-container-low hover:bg-surface-container-high transition-all rounded-xl overflow-hidden shadow-sm group border border-outline-variant/5"
+          >
+            <div
+              class="grid grid-cols-1 md:grid-cols-12 items-center p-6 md:p-8 gap-6"
+            >
+              <div class="col-span-1 md:col-span-4 flex items-center gap-6">
+                <div class="relative">
+                  <img
+                    class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    data-alt="Close up of a customer with messy hair getting ready for a haircut transformation in a luxury chair"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8jOtY--Eaiu5MWRUaHzqXqNCVwLJhFL3hrIiopfaa2hERdkQ0fmbQPR8F8ftgJ6JaA85rR2lo7sCPUbd-RdwLMN1xOJJDZx3bvgMz_GOhwgtM1nl7s2Foazo183QamJvqP6qtb9lKxEykIq3YWhGlpbfkOHvIbdU-PsPVt6ZDf7ZF2Q6MWR21VsL6ulb99A23TBnZCwkVPp6vWR3Mg9L8DSvEYYiZjkWiLEwVPGtMuqSTiXZEK0_FrUEZyx8K8LZ43d8lDAPJ1hs"
+                    style=""
+                  />
+                  <div
+                    class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary rounded-full border-2 border-surface-container-low"
+                  ></div>
+                </div>
+                <div>
+                  <h3
+                    class="text-xl font-extrabold tracking-tight font-['Manrope']"
+                    style=""
+                  >
+                    Soren Kross
+                  </h3>
+                  <p
+                    class="text-sm text-tertiary font-bold tracking-widest uppercase text-[10px] mt-1 font-['Inter']"
+                    style=""
+                  >
+                    Full Atelier Ritual
+                  </p>
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <div class="flex flex-col">
+                  <span class="text-lg font-bold font-['Manrope']" style=""
+                    >02:30 PM</span
+                  >
+                  <span class="text-xs text-outline font-['Inter']" style=""
+                    >60 min session</span
+                  >
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <span
+                  class="text-lg font-bold text-on-surface font-['Manrope']"
+                  style=""
+                  >$85.00</span
+                >
+              </div>
+              <div class="col-span-1 md:col-span-2 text-center">
+                <span
+                  class="bg-surface-container-highest text-tertiary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border border-tertiary/20 font-['Inter']"
+                  style=""
+                  >Pending</span
+                >
+              </div>
+              <div class="col-span-1 md:col-span-2 flex justify-end gap-2">
+                <button
+                  class="w-10 h-10 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center"
+                  style=""
+                  title="Confirm Appointment"
+                >
+                  <span class="material-symbols-outlined text-sm" style=""
+                    >check</span
+                  >
+                </button>
+                <button
+                  class="w-10 h-10 rounded-xl bg-error/10 text-error hover:bg-error hover:text-on-error transition-all flex items-center justify-center"
+                  style=""
+                  title="Reject Appointment"
+                >
+                  <span class="material-symbols-outlined text-sm" style=""
+                    >close</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Paging -->
+        <div
+          class="mt-12 flex justify-between items-center py-8 border-t border-outline-variant/10"
+        >
+          <p class="text-xs text-outline font-medium font-['Inter']" style="">
+            Showing 1-4 of 12 appointments today
+          </p>
+          <div class="flex gap-2">
+            <button
+              class="p-3 bg-surface-container-low rounded-xl text-outline hover:text-on-surface transition-colors border border-outline-variant/5"
+              style=""
+            >
+              <span class="material-symbols-outlined" style=""
+                >chevron_left</span
+              >
+            </button>
+            <button
+              class="p-3 bg-primary-container text-on-primary-container rounded-xl transition-transform active:scale-90 shadow-md"
+              style=""
+            >
+              <span class="material-symbols-outlined" style=""
+                >chevron_right</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+      class="lg:hidden fixed bottom-0 left-0 w-full bg-surface-container/90 backdrop-blur-xl h-20 flex justify-around items-center z-50 border-t border-outline-variant/10"
+    >
+      <a
+        class="flex flex-col items-center gap-1 text-[#e2e2e5]/60"
+        href="#"
+        style=""
+      >
+        <span class="material-symbols-outlined" style="">dashboard</span>
+        <span class="text-[10px] font-bold uppercase tracking-tighter" style=""
+          >Home</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center gap-1 text-[#b6c4ff]"
+        href="#"
+        style=""
+      >
+        <span
+          class="material-symbols-outlined"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >event_note</span
+        >
+        <span class="text-[10px] font-bold uppercase tracking-tighter" style=""
+          >Bookings</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center gap-1 text-[#e2e2e5]/60"
+        href="#"
+        style=""
+      >
+        <span class="material-symbols-outlined" style="">calendar_today</span>
+        <span class="text-[10px] font-bold uppercase tracking-tighter" style=""
+          >Schedule</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center gap-1 text-[#e2e2e5]/60"
+        href="#"
+        style=""
+      >
+        <span class="material-symbols-outlined" style="">person</span>
+        <span class="text-[10px] font-bold uppercase tracking-tighter" style=""
+          >Profile</span
+        >
+      </a>
+    </nav>
+  </body>
+</html>

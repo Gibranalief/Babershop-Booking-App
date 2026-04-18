@@ -1,0 +1,121 @@
+// ============================================================
+// The Atelier — Prisma Schema
+// ============================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ──────────────────────────────────────────────────
+
+enum Role {
+  CUSTOMER
+  BARBER
+}
+
+enum SlotStatus {
+  AVAILABLE
+  DISABLED
+  BOOKED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+// ─── User ───────────────────────────────────────────────────
+
+model User {
+  id        String    @id @default(uuid())
+  email     String    @unique
+  password  String
+  name      String
+  phone     String?
+  role      Role      @default(CUSTOMER)
+  barber    Barber?
+  bookings  Booking[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("users")
+}
+
+// ─── Barber ─────────────────────────────────────────────────
+
+model Barber {
+  id        String     @id @default(uuid())
+  userId    String     @unique
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio       String?
+  specialty String?
+  imageUrl  String?
+  services  Service[]
+  schedules Schedule[]
+  bookings  Booking[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("barbers")
+}
+
+// ─── Service ────────────────────────────────────────────────
+
+model Service {
+  id        String    @id @default(uuid())
+  barberId  String
+  barber    Barber    @relation(fields: [barberId], references: [id], onDelete: Cascade)
+  name      String
+  duration  Int       // duration in minutes
+  price     Float
+  bookings  Booking[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("services")
+}
+
+// ─── Schedule (Time Slot) ───────────────────────────────────
+
+model Schedule {
+  id        String     @id @default(uuid())
+  barberId  String
+  barber    Barber     @relation(fields: [barberId], references: [id], onDelete: Cascade)
+  date      DateTime   @db.Date
+  startTime String     // e.g. "09:00"
+  endTime   String     // e.g. "10:00"
+  status    SlotStatus @default(AVAILABLE)
+  booking   Booking?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@unique([barberId, date, startTime])
+  @@map("schedules")
+}
+
+// ─── Booking ────────────────────────────────────────────────
+
+model Booking {
+  id         String        @id @default(uuid())
+  userId     String
+  user       User          @relation(fields: [userId], references: [id])
+  barberId   String
+  barber     Barber        @relation(fields: [barberId], references: [id])
+  serviceId  String
+  service    Service       @relation(fields: [serviceId], references: [id])
+  scheduleId String        @unique
+  schedule   Schedule      @relation(fields: [scheduleId], references: [id])
+  status     BookingStatus @default(PENDING)
+  notes      String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  @@map("bookings")
+}

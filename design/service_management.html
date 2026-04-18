@@ -1,0 +1,620 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#374c56",
+              "inverse-on-surface": "#2f3133",
+              "on-error": "#690005",
+              "inverse-primary": "#004ee8",
+              "on-secondary-fixed-variant": "#354a53",
+              "on-tertiary-container": "#4f3d00",
+              "on-background": "#e2e2e5",
+              "surface-container-low": "#1a1c1e",
+              "on-secondary-fixed": "#071e27",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-surface-variant": "#c3c5d8",
+              error: "#ffb4ab",
+              "surface-container": "#1e2022",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#dce1ff",
+              "on-surface": "#e2e2e5",
+              "error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#574500",
+              "surface-tint": "#b6c4ff",
+              "on-tertiary": "#3c2f00",
+              "surface-bright": "#38393c",
+              "inverse-surface": "#e2e2e5",
+              surface: "#121416",
+              "on-primary-fixed": "#001550",
+              secondary: "#b4cad6",
+              primary: "#b6c4ff",
+              "tertiary-fixed-dim": "#e9c349",
+              "tertiary-fixed": "#ffe088",
+              "outline-variant": "#434656",
+              "on-tertiary-fixed": "#241a00",
+              "on-secondary-container": "#a6bcc7",
+              "on-primary-fixed-variant": "#003ab3",
+              tertiary: "#e9c349",
+              "secondary-fixed": "#cfe6f2",
+              outline: "#8d90a2",
+              "on-secondary": "#1e333c",
+              "tertiary-container": "#cca730",
+              "surface-dim": "#121416",
+              "secondary-fixed-dim": "#b4cad6",
+              "surface-container-highest": "#333537",
+              "surface-container-high": "#282a2c",
+              "on-primary-container": "#f7f5ff",
+              "surface-container-lowest": "#0c0e10",
+              "primary-container": "#2962ff",
+              "surface-variant": "#333537",
+              "on-primary": "#002780",
+              background: "#121416",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-body text-on-surface selection:bg-primary/30 antialiased"
+  >
+    <!-- SideNavBar Shell -->
+    <aside
+      class="fixed left-0 top-0 h-full w-64 bg-[#121416] border-r border-outline-variant/10 hidden md:flex flex-col px-6 py-10 z-40"
+    >
+      <div class="mb-12">
+        <span
+          class="text-2xl font-extrabold tracking-[0.1em] uppercase text-[#e2e2e5] font-headline"
+          style=""
+          >THE ATELIER</span
+        >
+        <p
+          class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] text-primary/60 font-bold mt-1"
+          style=""
+        >
+          Premium Barbering
+        </p>
+      </div>
+      <nav class="flex-grow flex flex-col gap-2">
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 hover:bg-[#1a1c1e] hover:text-[#e2e2e5] transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined" style="">dashboard</span>
+          Overview
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 hover:bg-[#1a1c1e] hover:text-[#e2e2e5] transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined" style="">calendar_today</span>
+          Schedule
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e9c349] bg-[#282a2c] rounded-md px-4 py-3 transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs font-bold"
+          href="#"
+          style=""
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >content_cut</span
+          >
+          Services
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 hover:bg-[#1a1c1e] hover:text-[#e2e2e5] transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined" style="">event_note</span>
+          Bookings
+        </a>
+      </nav>
+      <div class="mt-auto flex flex-col gap-6">
+        <div
+          class="flex items-center gap-4 px-2 py-3 bg-surface-container rounded-lg"
+        >
+          <div
+            class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/15"
+          >
+            <img
+              alt="Barber Profile"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSlQdPoTsnAWku-A2Ijl_MwvzQESjOCUooY8MMDP6W4jJtR3sGsDpDZHLK0oRN7Q4FHNq1y7Uv5ordafYmYyXBZxicy5gK8jywaboAc_TKyVSpIj12nO1Hn9tvbk2uDjOKC6P8ABUspXZv-H9fJOaHbdOGVYnhGPE1N31JPt8-1tTcbWlVBHlDOIosVtdwmI2O3Kc5QseyO4BNYPcOcp_acfhLJaEp8KvXlGX2jw9-qVVb2koMeolf-Tin0HEwP-cHGR3WcW2UJkA"
+              style=""
+            />
+          </div>
+          <div class="flex-1 overflow-hidden">
+            <p class="text-[10px] font-bold text-on-surface truncate" style="">
+              Master Barber
+            </p>
+            <p class="text-[9px] text-on-surface-variant truncate" style="">
+              Premium Tier
+            </p>
+          </div>
+          <button
+            class="material-symbols-outlined text-on-surface-variant text-sm hover:text-on-surface"
+            style=""
+          >
+            settings
+          </button>
+        </div>
+        <button
+          class="w-full bg-primary-container text-on-primary-container py-3 rounded-md font-bold text-xs uppercase tracking-widest shadow-lg shadow-primary-container/20 hover:scale-[0.98] transition-transform"
+          style=""
+        >
+          New Appointment
+        </button>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 py-3 hover:text-error transition-colors font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined" style="">logout</span> Logout
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="md:ml-64 min-h-screen p-10 bg-surface">
+      <div class="max-w-6xl mx-auto">
+        <!-- Global Actions Header (Desktop) -->
+        <div class="hidden md:flex justify-end mb-8 gap-4">
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors relative"
+            style=""
+          >
+            <span class="material-symbols-outlined" style=""
+              >notifications</span
+            >
+            <span
+              class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"
+            ></span>
+          </button>
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"
+            style=""
+          >
+            <span class="material-symbols-outlined" style="">settings</span>
+          </button>
+        </div>
+        <!-- Header Section -->
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+        >
+          <div>
+            <h2
+              class="text-5xl md:text-7xl font-extrabold font-headline tracking-tighter text-on-surface mb-2"
+              style=""
+            >
+              Service Menu.
+            </h2>
+            <p class="text-on-surface-variant font-medium text-lg" style="">
+              Curate the Atelier's precision offerings.
+            </p>
+          </div>
+          <button
+            class="flex items-center justify-center gap-2 bg-primary-container hover:bg-primary-container/90 text-on-primary-container px-6 py-4 rounded-md font-bold tracking-tight transition-all active:scale-95"
+            style=""
+          >
+            <span class="material-symbols-outlined" style="">add</span>
+            <span class="" style="">Add New Service</span>
+          </button>
+        </div>
+        <!-- Bento Grid of Services -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Service Card 1: The Master Cut -->
+          <div
+            class="group relative overflow-hidden bg-surface-container-high rounded-xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-500 hover:bg-[#2c2f32]"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-700"
+            ></div>
+            <div class="relative z-10">
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="bg-tertiary/10 text-tertiary text-[10px] uppercase tracking-[0.2em] font-black px-3 py-1 rounded-full border border-tertiary/20"
+                  style=""
+                  >Signature</span
+                >
+                <div class="flex gap-2">
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors"
+                    style=""
+                  >
+                    <span class="material-symbols-outlined text-lg" style=""
+                      >edit</span
+                    >
+                  </button>
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-error/10 hover:text-error transition-colors"
+                    style=""
+                  >
+                    <span class="material-symbols-outlined text-lg" style=""
+                      >delete</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <h3
+                class="text-3xl font-headline font-bold leading-none mb-4 text-on-surface"
+                style=""
+              >
+                The Atelier Cut
+              </h3>
+              <p
+                class="text-on-surface-variant text-sm font-light leading-relaxed mb-6 opacity-70"
+                style=""
+              >
+                A precision-tailored haircut including a luxury shampoo service
+                and scalp massage.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between border-t border-outline-variant/10 pt-6"
+            >
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-primary-fixed-dim text-sm"
+                  style=""
+                  >schedule</span
+                >
+                <span
+                  class="text-on-surface font-bold text-sm tracking-tight"
+                  style=""
+                  >45 min</span
+                >
+              </div>
+              <div
+                class="text-2xl font-black text-on-surface font-headline"
+                style=""
+              >
+                Rp150k
+              </div>
+            </div>
+          </div>
+          <!-- Service Card 2: Shave -->
+          <div
+            class="group bg-surface-container-low rounded-xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:bg-surface-container-high"
+          >
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="text-on-surface-variant/40 text-[10px] uppercase tracking-[0.2em] font-black"
+                  style=""
+                  >Traditional</span
+                >
+                <div class="flex gap-2">
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-highest transition-colors"
+                    style=""
+                  >
+                    <span class="material-symbols-outlined text-lg" style=""
+                      >edit</span
+                    >
+                  </button>
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-error/10 hover:text-error transition-colors"
+                    style=""
+                  >
+                    <span class="material-symbols-outlined text-lg" style=""
+                      >delete</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <h3
+                class="text-3xl font-headline font-bold leading-none mb-4 text-on-surface"
+                style=""
+              >
+                Royal Shave
+              </h3>
+              <p
+                class="text-on-surface-variant text-sm font-light leading-relaxed mb-6 opacity-70"
+                style=""
+              >
+                Hot towel treatment, straight razor precision, and post-shave
+                infusion.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between border-t border-outline-variant/10 pt-6"
+            >
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-primary-fixed-dim text-sm"
+                  style=""
+                  >schedule</span
+                >
+                <span
+                  class="text-on-surface font-bold text-sm tracking-tight"
+                  style=""
+                  >30 min</span
+                >
+              </div>
+              <div
+                class="text-2xl font-black text-on-surface font-headline"
+                style=""
+              >
+                Rp85k
+              </div>
+            </div>
+          </div>
+          <!-- Service Card 3: Beard Sculpt -->
+          <div
+            class="group bg-surface-container-low rounded-xl p-8 flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:bg-surface-container-high"
+          >
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="text-on-surface-variant/40 text-[10px] uppercase tracking-[0.2em] font-black"
+                  style=""
+                  >Maintenance</span
+                >
+                <div class="flex gap-2">
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-highest transition-colors"
+                    style=""
+                  >
+                    <span class="material-symbols-outlined text-lg" style=""
+                      >edit</span
+                    >
+                  </button>
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-error/10 hover:text-error transition-colors"
+                    style=""
+                  >
+                    <span class="material-symbols-outlined text-lg" style=""
+                      >delete</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <h3
+                class="text-3xl font-headline font-bold leading-none mb-4 text-on-surface"
+                style=""
+              >
+                Beard Sculpt
+              </h3>
+              <p
+                class="text-on-surface-variant text-sm font-light leading-relaxed mb-6 opacity-70"
+                style=""
+              >
+                Symmetry-focused trimming and shaping with oil conditioning.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between border-t border-outline-variant/10 pt-6"
+            >
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-primary-fixed-dim text-sm"
+                  style=""
+                  >schedule</span
+                >
+                <span
+                  class="text-on-surface font-bold text-sm tracking-tight"
+                  style=""
+                  >20 min</span
+                >
+              </div>
+              <div
+                class="text-2xl font-black text-on-surface font-headline"
+                style=""
+              >
+                Rp50k
+              </div>
+            </div>
+          </div>
+          <!-- Service Card 4: Executive Bundle -->
+          <div
+            class="group relative md:col-span-2 overflow-hidden bg-surface-container-lowest rounded-xl flex flex-col md:flex-row transition-all duration-500 hover:shadow-2xl"
+          >
+            <div class="md:w-2/5 relative h-48 md:h-auto overflow-hidden">
+              <img
+                alt="Barber Tools"
+                class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuxGfFuhLs_vWf05CarYKyXd0oBUGt6u4yxDugrZk12OQonu0YTmUEsv5StRTP7U6DBJTofirM37voDjigbV2vXruRypYf3GQoNybl_RJUOwQPO5J5-QaFk1vZ7Aem5kWjdZFWJBI4YEm8-dubDzxZ2i0Sxn3sGGtfEEQqMS0tccHxnjNAptYJN_g17zyZDyFaRdPIGv0S7Bc8buPwipIlkMyGw8dYFR8SascIK1FYNoPO-q-bWWZAhYQHRkYZ3_86kKxCSbpFITM"
+                style=""
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-transparent to-transparent hidden md:block"
+              ></div>
+            </div>
+            <div class="p-10 flex flex-col justify-between flex-1 relative">
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="bg-primary/10 text-primary-fixed-dim text-[10px] uppercase tracking-[0.2em] font-black px-3 py-1 rounded-full border border-primary/20"
+                  style=""
+                  >The Full Suite</span
+                >
+                <div class="flex gap-2">
+                  <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-highest transition-colors"
+                    style=""
+                  >
+                    <span class="material-symbols-outlined" style="">edit</span>
+                  </button>
+                  <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-error/10 hover:text-error transition-colors"
+                    style=""
+                  >
+                    <span class="material-symbols-outlined" style=""
+                      >delete</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <h3
+                class="text-4xl font-headline font-extrabold text-on-surface mb-2"
+                style=""
+              >
+                Executive Grooming
+              </h3>
+              <p
+                class="text-on-surface-variant/80 text-sm max-w-md leading-relaxed mb-8"
+                style=""
+              >
+                The ultimate atelier experience. Includes cut, wash, shave,
+                facial massage, and executive-level styling product application.
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex gap-6">
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-primary-fixed-dim"
+                      style=""
+                      >schedule</span
+                    >
+                    <span
+                      class="text-on-surface font-bold tracking-tight"
+                      style=""
+                      >90 min</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-tertiary"
+                      style=""
+                      >star</span
+                    >
+                    <span
+                      class="text-on-surface font-bold tracking-tight"
+                      style=""
+                      >VIP Only</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="text-4xl font-black text-on-surface font-headline"
+                  style=""
+                >
+                  Rp275k
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Empty Add New State -->
+          <div
+            class="group border-2 border-dashed border-outline-variant/20 rounded-xl p-8 flex flex-col items-center justify-center min-h-[320px] transition-all hover:border-primary/50 cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-4 group-hover:bg-primary-container group-hover:text-on-primary-container transition-all"
+            >
+              <span class="material-symbols-outlined text-3xl" style=""
+                >add_circle</span
+              >
+            </div>
+            <span
+              class="text-on-surface-variant font-bold tracking-tighter text-xl"
+              style=""
+              >Create New Offer</span
+            >
+            <p
+              class="text-on-surface-variant/40 text-xs text-center mt-2 px-8"
+              style=""
+            >
+              Define duration, price, and elite descriptions for your next
+              service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Contextual FAB (Mobile Only) -->
+    <button
+      class="md:hidden fixed bottom-24 right-6 w-16 h-16 bg-primary-container text-on-primary-container rounded-full shadow-[0_12px_24px_rgba(0,0,0,0.4)] flex items-center justify-center z-50 active:scale-90 transition-transform"
+      style=""
+    >
+      <span class="material-symbols-outlined text-3xl" style="">add</span>
+    </button>
+    <!-- BottomNavBar Shell (Mobile Only) -->
+    <nav
+      class="md:hidden fixed bottom-0 w-full h-16 bg-[#121416]/90 backdrop-blur-xl z-50 flex items-center justify-around px-6"
+    >
+      <button
+        class="flex flex-col items-center gap-1 text-[#e2e2e5]/60"
+        style=""
+      >
+        <span class="material-symbols-outlined" style="">dashboard</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest" style=""
+          >Home</span
+        >
+      </button>
+      <button
+        class="flex flex-col items-center gap-1 text-[#e2e2e5]/60"
+        style=""
+      >
+        <span class="material-symbols-outlined" style="">calendar_today</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest" style=""
+          >Dates</span
+        >
+      </button>
+      <button class="flex flex-col items-center gap-1 text-[#b6c4ff]" style="">
+        <span
+          class="material-symbols-outlined"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >content_cut</span
+        >
+        <span class="text-[10px] font-bold uppercase tracking-widest" style=""
+          >Services</span
+        >
+      </button>
+      <button
+        class="flex flex-col items-center gap-1 text-[#e2e2e5]/60"
+        style=""
+      >
+        <span class="material-symbols-outlined" style="">person</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest" style=""
+          >Me</span
+        >
+      </button>
+    </nav>
+  </body>
+</html>

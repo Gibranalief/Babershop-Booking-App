@@ -1,0 +1,356 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#ffdad6",
+              "inverse-surface": "#e2e2e5",
+              "on-tertiary-fixed": "#241a00",
+              "surface-variant": "#333537",
+              "on-error": "#690005",
+              "surface-container-lowest": "#0c0e10",
+              "on-tertiary": "#3c2f00",
+              "surface-container": "#1e2022",
+              "tertiary-fixed": "#ffe088",
+              "primary-container": "#2962ff",
+              "secondary-container": "#374c56",
+              "surface-tint": "#b6c4ff",
+              "on-secondary-fixed-variant": "#354a53",
+              "surface-dim": "#121416",
+              "on-secondary": "#1e333c",
+              "primary-fixed": "#dce1ff",
+              "on-tertiary-fixed-variant": "#574500",
+              "on-tertiary-container": "#4f3d00",
+              "surface-bright": "#38393c",
+              "on-secondary-container": "#a6bcc7",
+              "outline-variant": "#434656",
+              "on-secondary-fixed": "#071e27",
+              "on-primary-container": "#f7f5ff",
+              "on-background": "#e2e2e5",
+              error: "#ffb4ab",
+              "tertiary-container": "#cca730",
+              outline: "#8d90a2",
+              "surface-container-low": "#1a1c1e",
+              "error-container": "#93000a",
+              "on-primary-fixed-variant": "#003ab3",
+              "inverse-on-surface": "#2f3133",
+              "secondary-fixed": "#cfe6f2",
+              "tertiary-fixed-dim": "#e9c349",
+              "on-primary": "#002780",
+              "surface-container-highest": "#333537",
+              "on-surface-variant": "#c3c5d8",
+              "inverse-primary": "#004ee8",
+              "on-primary-fixed": "#001550",
+              tertiary: "#e9c349",
+              primary: "#b6c4ff",
+              "on-surface": "#e2e2e5",
+              "secondary-fixed-dim": "#b4cad6",
+              surface: "#121416",
+              "primary-fixed-dim": "#b6c4ff",
+              background: "#121416",
+              secondary: "#b4cad6",
+              "surface-container-high": "#282a2c",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 200,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Manrope", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface selection:bg-primary/30">
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#121416]/70 backdrop-blur-xl flex justify-between items-center px-8 h-20 w-full max-w-full"
+    >
+      <div class="text-2xl font-black tracking-tighter text-[#e2e2e5]">
+        The Midnight Atelier
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a
+          class="text-[#e2e2e5] font-medium hover:text-[#b6c4ff] transition-colors duration-300"
+          href="#"
+          >Barbers</a
+        >
+        <a
+          class="text-[#e2e2e5] font-medium hover:text-[#b6c4ff] transition-colors duration-300"
+          href="#"
+          >Services</a
+        >
+        <a
+          class="text-[#e2e2e5] font-medium hover:text-[#b6c4ff] transition-colors duration-300"
+          href="#"
+          >Gallery</a
+        >
+        <a
+          class="text-[#e2e2e5] font-medium hover:text-[#b6c4ff] transition-colors duration-300"
+          href="#"
+          >About</a
+        >
+      </div>
+      <div class="flex items-center gap-6">
+        <button class="text-[#e2e2e5] hover:text-[#b6c4ff] transition-colors">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <div
+          class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30"
+        >
+          <img
+            alt="User profile"
+            data-alt="close-up portrait of a stylish man with a well-groomed beard in a professional setting with warm lighting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr3x_kROIp0x57iooTgt37cpkyNatUxuMMgrrkmZOX9AJW_oWjXBSKHAqqX4w0xdAxxEUXYPsZXpFPSxotOpwCOacx_vFHadcGjOm_i87QXxATrtLl4I9tBczaH7FXQs9Km_y4Vmd3sPqFEr6JG2rXYeiowC0S_BtPll6MJZZhQzZ0aFn9zloYRsDyzUFHHyjnNstdiNd_-NrzQvBF-AjQPkbsbI4qnLX_xL5g72U1xOwObmVxVPgekC60QE1BQBrcNCPgP6d_uHo"
+          />
+        </div>
+      </div>
+    </nav>
+    <main
+      class="min-h-screen pt-32 pb-24 px-6 md:px-12 flex flex-col items-center"
+    >
+      <div class="max-w-4xl w-full">
+        <header class="mb-16 text-center md:text-left">
+          <h1
+            class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-4"
+          >
+            Confirm Appointment
+          </h1>
+          <p class="text-on-surface-variant font-body text-lg max-w-xl">
+            Review your booking details at Siap. Our masters are ready to craft
+            your signature look.
+          </p>
+        </header>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-8">
+            <div
+              class="bg-surface-container-low rounded-xl p-8 relative overflow-hidden"
+            >
+              <div class="absolute top-0 right-0 p-8 opacity-10">
+                <span class="material-symbols-outlined text-9xl"
+                  >content_cut</span
+                >
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+                <div class="space-y-10">
+                  <div>
+                    <span
+                      class="text-tertiary font-label text-[10px] uppercase tracking-[0.2em] mb-2 block font-bold"
+                      >Selected Artisan</span
+                    >
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="w-16 h-16 rounded-xl overflow-hidden grayscale"
+                      >
+                        <img
+                          alt="Barber"
+                          data-alt="sharp close-up of a professional male barber in a dark vest with tattoos, moody lighting, obsidian background"
+                          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKbe6bH1EzBnkU4TnnsrgvVoFf_fdaGQ01zi3MCnUr56fsNjSOxbv9DG8plHSqgveUTpTQBOUZ0fNsJXXFbuBDAtA-IWeG6yZXyILj_gMX9HX0XW7dy7FqcfZhMX9iT20VzxW61oTQSwu4IaePgdDiRv1hsfJFH6NKtiIUdLzdI8lMJuizwdVtRInT5JsPH3t9NJQU-fywKN8rZq4TAvYAGhC-gXfPWn4_7g542plGjHu-ZQCucAlyqPZFyKKZzN82PQzADjHBMw0"
+                        />
+                      </div>
+                      <div>
+                        <h3 class="text-2xl font-bold tracking-tight">
+                          Barber A
+                        </h3>
+                        <p class="text-on-surface-variant text-sm">
+                          Master Stylist
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <span
+                      class="text-tertiary font-label text-[10px] uppercase tracking-[0.2em] mb-2 block font-bold"
+                      >Service Detail</span
+                    >
+                    <div class="flex items-baseline gap-3">
+                      <h3 class="text-3xl font-bold tracking-tight">Haircut</h3>
+                      <span class="text-on-surface-variant text-sm"
+                        >45 Minutes</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-10">
+                  <div>
+                    <span
+                      class="text-tertiary font-label text-[10px] uppercase tracking-[0.2em] mb-2 block font-bold"
+                      >Date &amp; Arrival</span
+                    >
+                    <div class="space-y-2">
+                      <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary"
+                          >calendar_today</span
+                        >
+                        <p class="text-xl font-bold">10 April 2026</p>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary"
+                          >schedule</span
+                        >
+                        <p class="text-xl font-bold">13:00</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <span
+                      class="text-tertiary font-label text-[10px] uppercase tracking-[0.2em] mb-2 block font-bold"
+                      >Studio Location</span
+                    >
+                    <div class="flex items-start gap-3">
+                      <span class="material-symbols-outlined text-primary"
+                        >location_on</span
+                      >
+                      <p
+                        class="text-on-surface-variant text-sm leading-relaxed"
+                      >
+                        Siap Atelier<br />1223 Midnight Crescent<br />The
+                        Quarter, Level 2
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-8 flex flex-col md:flex-row gap-4 items-center justify-between bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10"
+            >
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-on-surface-variant"
+                  >info</span
+                >
+                <p class="text-xs text-on-surface-variant font-medium">
+                  Free cancellation up to 24 hours before your appointment.
+                </p>
+              </div>
+              <button
+                class="text-on-surface-variant text-xs hover:text-on-surface transition-colors flex items-center gap-2"
+              >
+                Add to Calendar
+                <span class="material-symbols-outlined text-sm">event</span>
+              </button>
+            </div>
+          </div>
+          <div class="lg:col-span-4 space-y-6">
+            <div
+              class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/5"
+            >
+              <h4
+                class="text-sm font-bold tracking-widest uppercase mb-8 text-on-surface"
+              >
+                Final Total
+              </h4>
+              <div class="space-y-4 mb-8">
+                <div class="flex justify-between items-center">
+                  <span class="text-on-surface-variant">Haircut</span>
+                  <span class="font-bold">$45.00</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-on-surface-variant">Service Fee</span>
+                  <span class="font-bold">$2.50</span>
+                </div>
+                <div class="h-px bg-outline-variant/15 my-4"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-xl font-bold">Total</span>
+                  <span class="text-xl font-black text-primary">$47.50</span>
+                </div>
+              </div>
+              <button
+                class="w-full bg-primary-container text-on-primary-container py-4 rounded-md font-bold text-lg hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary-container/20"
+              >
+                Confirm Booking
+              </button>
+              <button
+                class="w-full mt-4 text-on-surface-variant py-3 font-medium text-sm hover:text-on-surface transition-colors"
+              >
+                Change Details
+              </button>
+            </div>
+            <div
+              class="p-6 rounded-xl bg-surface-container-low/50 border border-outline-variant/5"
+            >
+              <p
+                class="text-[10px] uppercase tracking-widest font-bold text-tertiary mb-3"
+              >
+                Midnight Guarantee
+              </p>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Your data is secured with bank-grade encryption. Confirmation
+                will be sent instantly to your registered email.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-[#0b0c0d] py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-[#434656]/15"
+    >
+      <div class="text-[#e2e2e5] font-black tracking-tighter text-xl">
+        The Midnight Atelier
+      </div>
+      <div class="text-[#434656] text-sm font-body">
+        © 2024 The Midnight Atelier. All Rights Reserved.
+      </div>
+      <div class="flex gap-8">
+        <a
+          class="text-[#434656] hover:text-[#e2e2e5] transition-opacity duration-200 text-sm"
+          href="#"
+          >Privacy Policy</a
+        >
+        <a
+          class="text-[#434656] hover:text-[#e2e2e5] transition-opacity duration-200 text-sm"
+          href="#"
+          >Terms of Service</a
+        >
+        <a
+          class="text-[#434656] hover:text-[#e2e2e5] transition-opacity duration-200 text-sm"
+          href="#"
+          >Contact</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

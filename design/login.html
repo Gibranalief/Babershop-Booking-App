@@ -1,0 +1,285 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e2e2e5",
+              outline: "#8d90a2",
+              "on-surface": "#e2e2e5",
+              "surface-container-high": "#282a2c",
+              background: "#121416",
+              "on-secondary-fixed": "#071e27",
+              "on-secondary": "#1e333c",
+              "surface-container-low": "#1a1c1e",
+              "surface-bright": "#38393c",
+              "on-primary-fixed": "#001550",
+              "primary-fixed": "#dce1ff",
+              "secondary-container": "#374c56",
+              "tertiary-fixed": "#ffe088",
+              "on-error": "#690005",
+              secondary: "#b4cad6",
+              "error-container": "#93000a",
+              primary: "#b6c4ff",
+              "surface-variant": "#333537",
+              "primary-container": "#2962ff",
+              "outline-variant": "#434656",
+              "on-background": "#e2e2e5",
+              "primary-fixed-dim": "#b6c4ff",
+              "secondary-fixed": "#cfe6f2",
+              "surface-container-lowest": "#0c0e10",
+              error: "#ffb4ab",
+              "secondary-fixed-dim": "#b4cad6",
+              "on-secondary-container": "#a6bcc7",
+              "on-tertiary-fixed": "#241a00",
+              "on-surface-variant": "#c3c5d8",
+              "surface-dim": "#121416",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#2f3133",
+              "on-tertiary": "#3c2f00",
+              "tertiary-container": "#cca730",
+              "on-primary-container": "#f7f5ff",
+              "inverse-primary": "#004ee8",
+              "surface-container-highest": "#333537",
+              "on-tertiary-fixed-variant": "#574500",
+              "on-secondary-fixed-variant": "#354a53",
+              "tertiary-fixed-dim": "#e9c349",
+              "on-primary": "#002780",
+              "on-primary-fixed-variant": "#003ab3",
+              "on-tertiary-container": "#4f3d00",
+              surface: "#121416",
+              "surface-tint": "#b6c4ff",
+              "surface-container": "#1e2022",
+              tertiary: "#e9c349",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Manrope", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-surface min-h-screen flex flex-col selection:bg-primary selection:text-on-primary"
+  >
+    <!-- Header / TopAppBar (Contextually Hidden/Simplified as per Shell Rules for Transactional Pages) -->
+    <header class="flex justify-between items-center w-full px-6 py-8">
+      <div
+        class="text-2xl font-black tracking-tighter text-on-surface"
+        style=""
+      >
+        The Midnight Atelier
+      </div>
+      <div class="flex items-center gap-2">
+        <span
+          class="material-symbols-outlined text-outline"
+          data-icon="help_outline"
+          style=""
+          >help_outline</span
+        >
+      </div>
+    </header>
+    <main
+      class="flex-grow flex items-center justify-center px-4 py-12 relative overflow-hidden"
+    >
+      <!-- Ambient Light Background Elements -->
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-tertiary/5 rounded-full blur-[120px]"
+      ></div>
+      <!-- Login Card Container -->
+      <div
+        class="w-full max-w-md bg-surface-container-low rounded-xl p-8 md:p-10 relative z-10"
+      >
+        <div class="space-y-2 mb-10">
+          <h1
+            class="text-4xl font-extrabold tracking-tight text-on-surface"
+            style=""
+          >
+            Welcome Back 👋
+          </h1>
+          <p class="text-on-surface-variant/80 font-body" style="">
+            Login to continue your booking
+          </p>
+        </div>
+        <form action="#" class="space-y-6">
+          <!-- Email Field -->
+          <div class="space-y-2">
+            <label
+              class="text-xs uppercase tracking-widest text-on-surface-variant font-medium"
+              for="email"
+              style=""
+              >Email</label
+            >
+            <div class="relative group">
+              <input
+                class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/15 focus:ring-primary/50 rounded-lg py-4 px-4 text-on-surface placeholder:text-outline-variant transition-all duration-300"
+                id="email"
+                placeholder="name@example.com"
+                type="email"
+              />
+            </div>
+          </div>
+          <!-- Password Field -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center">
+              <label
+                class="text-xs uppercase tracking-widest text-on-surface-variant font-medium"
+                for="password"
+                style=""
+                >Password</label
+              >
+              <a
+                class="text-xs font-medium text-primary hover:text-primary-fixed-dim transition-colors"
+                href="#"
+                style=""
+                >Forgot password?</a
+              >
+            </div>
+            <div class="relative group">
+              <input
+                class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/15 focus:ring-primary/50 rounded-lg py-4 px-4 text-on-surface placeholder:text-outline-variant transition-all duration-300"
+                id="password"
+                placeholder="••••••••"
+                type="password"
+              />
+            </div>
+          </div>
+          <!-- Primary CTA -->
+          <button
+            class="w-full bg-primary-container text-on-primary-container font-bold py-4 rounded-lg shadow-lg hover:brightness-110 active:scale-[0.98] transition-all duration-300 tracking-tight text-lg"
+            type="submit"
+            style=""
+          >
+            LOGIN
+          </button>
+        </form>
+        <!-- Divider -->
+        <div class="relative my-10">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-outline-variant/10"></div>
+          </div>
+          <div class="relative flex justify-center text-xs">
+            <span
+              class="bg-surface-container-low px-4 text-on-surface-variant/60 font-medium"
+              style=""
+              >Or continue with</span
+            >
+          </div>
+        </div>
+        <!-- Social Login -->
+        <button
+          class="w-full bg-surface-container-high text-on-surface font-semibold py-4 rounded-lg flex items-center justify-center gap-3 hover:bg-surface-container-highest transition-all duration-300 active:scale-[0.98]"
+          style=""
+        >
+          <svg
+            fill="none"
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+              fill="#4285F4"
+            ></path>
+            <path
+              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+              fill="#34A853"
+            ></path>
+            <path
+              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+              fill="#FBBC05"
+            ></path>
+            <path
+              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+              fill="#EA4335"
+            ></path>
+          </svg>
+          Login with Google
+        </button>
+        <!-- Footer Link -->
+        <div class="mt-10 text-center">
+          <p class="text-on-surface-variant font-body" style="">
+            Don't have an account?
+            <a
+              class="text-primary font-bold hover:underline underline-offset-4 ml-1"
+              href="#"
+              style=""
+              >Register</a
+            >
+          </p>
+        </div>
+      </div>
+    </main>
+    <!-- Bottom Navigation Mockup (Suppressed for focused login task as per Rules, but keeping structure for footer) -->
+    <footer
+      class="py-8 px-6 text-center text-outline-variant/40 text-[10px] tracking-widest uppercase"
+    >
+      © 2024 The Midnight Atelier - Siap Professional Booking
+    </footer>
+    <!-- Asset Previews (Hidden) -->
+    <div class="hidden">
+      <img
+        data-alt="close-up of a high-end luxury barber shop with dark wood, leather chairs, and soft ambient spotlighting"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-dotIELcWCiM-fdHQR5s2zIugPBo7ha9EKC4teyZGHIuBml9Ns6c1dnXd0ZScOP86XSls7V_jjgH_2JAGqWgyBdQenqKp2wR39t69ENGujKGFuNBvFX72HfmLO9OuMsAqjzncAcAXrU3Md-5LSyhe-w57z-yp-oqt3IyT4nxlFpJqOAXqUud2X1tqAuMf77fWb7Lhx2IlA0SZSAOLgHsVwuvYqsC9ImHM7NppONvZZ4sXupgr0gFbJlkRdEf9k9sBCi75X9PHUZA"
+        class=""
+        style=""
+      />
+      <img
+        data-alt="minimalist aesthetic gradient flowing from deep charcoal to electric blue with grainy texture"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCznFwr6e3SHR3QBoaMhXVcTqL9YhtPZNbygyDDYNmOsCVAfCaGzlHpc5dhPTde7T_0Quw34FNm-zQTWNO73oOmIDPaAnd1c2FNks0UsuNt4jZHzYI9I5fNjeLaA_rKCVGkXSLhU0Sw-mjlwmFNSB-D3QWbGhbpfiCsQIkOTV2LqGD2uCf7LudKyGqpYdQYbvKPDNDnHDMATBVi2PNcYvj7Y9fajNv7X4GWP_c6XucbWAO1hQV4fQ5Dq3_nyYQFyO_Ogh6aQLWv-aM"
+        class=""
+        style=""
+      />
+    </div>
+  </body>
+</html>
