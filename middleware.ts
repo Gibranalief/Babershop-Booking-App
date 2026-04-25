@@ -10,8 +10,9 @@ export function middleware(request: NextRequest) {
     if (!token) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
-    if (role !== 'barber') {
-      return NextResponse.redirect(new URL('/user', request.url)); // Redirect to user page if not a barber
+    // 🔴 FIX: Check against uppercase BARBER (or lowercase just in case)
+    if (role?.toUpperCase() !== 'BARBER') {
+      return NextResponse.redirect(new URL('/user', request.url)); 
     }
   }
 
@@ -32,7 +33,8 @@ export function middleware(request: NextRequest) {
   // Prevent logged in users from visiting auth pages
   if (request.nextUrl.pathname.startsWith('/login') || request.nextUrl.pathname.startsWith('/register')) {
     if (token) {
-      return NextResponse.redirect(new URL(role === 'barber' ? '/dashboard' : '/user', request.url));
+      // 🔴 FIX: Also check case here to route them correctly if they hit /login while logged in
+      return NextResponse.redirect(new URL(role?.toUpperCase() === 'BARBER' ? '/dashboard' : '/user', request.url));
     }
   }
 

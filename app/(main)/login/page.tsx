@@ -1,33 +1,45 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useAuthStore } from "@/store/authStore";
+import { login } from "../../../lib/api"; // Adjust this path if necessary
 
 export default function Login() {
+  const router = useRouter();
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const router = useRouter();
-  const { login, isLoading, error, clearError } = useAuthStore();
-
-  useEffect(() => {
-    clearError();
-  }, [clearError]);
+  
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !password) return;
-    
+    setError("");
+    setLoading(true);
+
     try {
-      const { role } = await login(email, password);
-      if (role === "barber") {
-        router.push("/dashboard");
-      } else {
-        router.push("/user");
+      // 1. Send login request to the NestJS backend
+      const data = await login(email, password);
+      
+      // 2. Save the role so the Navbar knows where to link the profile button
+      if (typeof window !== "undefined") {
+        localStorage.setItem("role", data.user.role);
+        window.dispatchEvent(new Event("storage")); // Instantly updates the Navbar
       }
-    } catch (err) {
-      // Error handled in store
+      
+      // 3. The Traffic Director: Route based on Account Type
+      if (data.user?.role === "BARBER") {
+        router.push("/dashboard"); 
+      } else {
+        router.push("/user"); 
+      }
+      
+    } catch (err: any) {
+      setError(err.message || "Invalid email or password.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -35,16 +47,15 @@ export default function Login() {
     <main className="pt-28 pb-32 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center min-h-screen">
       <div className="w-full max-w-md bg-surface-container-low p-8 rounded-2xl shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-5">
-          <span className="material-symbols-outlined text-9xl">person</span>
+          <span className="material-symbols-outlined text-9xl">login</span>
         </div>
         <div className="relative z-10">
           <h1 className="text-4xl font-black font-headline tracking-tighter mb-2">Welcome Back.</h1>
-          <p className="text-outline text-sm mb-6">Sign in to manage your appointments.</p>
+          <p className="text-outline text-sm mb-8">Sign in to manage your bookings and schedule.</p>
           
           {error && (
-            <div className="bg-error-container/20 border border-error/50 text-error px-4 py-3 rounded-lg mb-6 text-sm flex items-start gap-2">
-              <span className="material-symbols-outlined text-lg">error</span>
-              <p>{error}</p>
+            <div className="bg-red-500/10 border border-red-500/50 text-red-500 text-sm p-3 rounded-lg mb-6">
+              {error}
             </div>
           )}
 
@@ -60,6 +71,7 @@ export default function Login() {
                 placeholder="you@example.com" 
               />
             </div>
+            
             <div>
               <label className="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Password</label>
               <input 
@@ -71,30 +83,17 @@ export default function Login() {
                 placeholder="••••••••" 
               />
             </div>
-            <div className="flex items-center justify-between mt-4 mb-8">
-              <label className="flex items-center gap-2">
-                <input type="checkbox" className="form-checkbox rounded bg-surface-container-lowest border-outline-variant/30 text-primary focus:ring-primary focus:ring-offset-surface" />
-                <span className="text-xs text-on-surface-variant font-medium">Remember me</span>
-              </label>
-              <Link href="#" className="text-xs text-primary font-bold hover:underline">Forgot Password?</Link>
-            </div>
+
             <button 
               type="submit" 
-              disabled={isLoading}
-              className="w-full py-4 bg-primary-container text-on-primary-container rounded-lg font-headline font-black uppercase tracking-widest text-sm hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              disabled={loading}
+              className="w-full py-4 bg-primary-container text-on-primary-container rounded-lg font-headline font-black uppercase tracking-widest text-sm hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed mt-4"
             >
-              {isLoading ? (
-                <>
-                  <span className="material-symbols-outlined animate-spin text-lg">progress_activity</span>
-                  <span>Signing In...</span>
-                </>
-              ) : (
-                "Sign In"
-              )}
+              {loading ? "Signing In..." : "Sign In"}
             </button>
           </form>
           <p className="text-center text-xs text-on-surface-variant mt-8">
-            Don&apos;t have an account? <Link href="/register" className="text-primary font-bold hover:underline">Create Account</Link>
+            Don't have an account? <Link href="/register" className="text-primary font-bold hover:underline">Sign Up</Link>
           </p>
         </div>
       </div>

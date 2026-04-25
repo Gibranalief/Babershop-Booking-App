@@ -2,9 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function MobileNav() {
   const pathname = usePathname();
+  const [role, setRole] = useState("CUSTOMER");
+
+  // Read the saved role when the app loads
+  useEffect(() => {
+    const checkRole = () => {
+      const savedRole = localStorage.getItem("role") || "CUSTOMER";
+      setRole(savedRole);
+    };
+
+    checkRole();
+    window.addEventListener("storage", checkRole);
+    return () => window.removeEventListener("storage", checkRole);
+  }, []);
+
+  // 🔴 DYNAMIC ROUTE: Barbers go to dashboard, Customers go to user profile
+  const profileLink = role === "BARBER" ? "/dashboard" : "/user";
 
   const isActive = (path: string) => {
     if (path === "/" && pathname !== "/") return false;
@@ -52,10 +69,11 @@ export default function MobileNav() {
         <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Bookings</span>
       </Link>
       
-      <Link href="/user" className={getLinkClass("/user")}>
+      {/* 🔴 DYNAMIC BUTTON */}
+      <Link href={profileLink} className={getLinkClass(profileLink)}>
         <span
           className="material-symbols-outlined"
-          style={isActive("/user") ? { fontVariationSettings: '"FILL" 1' } : {}}
+          style={isActive(profileLink) ? { fontVariationSettings: '"FILL" 1' } : {}}
         >
           person
         </span>

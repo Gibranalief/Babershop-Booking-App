@@ -119,6 +119,10 @@ async function request<T>(
 
   // 401 Unauthorized globally kicks to login
   if (res.status === 401) {
+    if (endpoint === "/auth/login") {
+      throw new ApiError("Invalid email or password.", 401);
+    }
+
     if (typeof window !== "undefined") {
       localStorage.removeItem("token");
       document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
@@ -167,9 +171,11 @@ export async function login(
     body: JSON.stringify({ email, password }),
   });
 
-  // Persist token
+  // 🔴 FIX: Persist token in BOTH localStorage and cookies
   if (typeof window !== "undefined") {
     localStorage.setItem("token", data.access_token);
+    document.cookie = `token=${data.access_token}; path=/; max-age=86400`; // 1 day
+    document.cookie = `role=${data.user.role}; path=/; max-age=86400`;
   }
 
   return data;
@@ -183,9 +189,13 @@ export async function register(
     body: JSON.stringify(registerData),
   });
 
-  // Persist token
+  // 🔴 FIX: Persist token in BOTH localStorage and cookies
   if (typeof window !== "undefined") {
     localStorage.setItem("token", data.access_token);
+    document.cookie = `token=${data.access_token}; path=/; max-age=86400`;
+    if (data.user?.role) {
+      document.cookie = `role=${data.user.role}; path=/; max-age=86400`;
+    }
   }
 
   return data;
@@ -257,5 +267,21 @@ export async function updateBookingStatus(
 export async function cancelBooking(id: string): Promise<Booking> {
   return request<Booking>(`/bookings/${id}`, {
     method: "DELETE",
+  });
+}
+
+// ─── Service Management ─────────────────────────────────────
+export async function createService(data: { name: string; duration: number; price: number }): Promise<Service> {
+  return request<Service>("/services", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}
+
+// ─── Schedule Management ────────────────────────────────────
+export async function createSchedule(data: { date: string; startTime: string; endTime: string }): Promise<Schedule> {
+  return request<Schedule>("/schedules", {
+    method: "POST",
+    body: JSON.stringify(data),
   });
 }

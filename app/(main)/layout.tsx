@@ -1,13 +1,17 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import MobileNav from "@/components/MobileNav";
+import Navbar from "../../components/Navbar";
+import MobileNav from "../../components/MobileNav";
 
-export default function MainLayout({ children }: { children: React.ReactNode }) {
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <Navbar />
-      {children}
-      <Footer />
+      <div className="pt-20"> 
+        {children}
+      </div>
       <MobileNav />
     </>
   );

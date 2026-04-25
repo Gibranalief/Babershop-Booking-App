@@ -16,30 +16,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(main)/login/page": [
+    "/(main)/user/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/login/page.js"
+      "static/chunks/app/(main)/user/page.js"
     ],
-    "/(main)/barbers/page": [
+    "/(main)/user/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/barbers/page.js"
-    ],
-    "/(main)/services/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/services/page.js"
-    ],
-    "/(main)/gallery/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/gallery/page.js"
-    ],
-    "/(main)/register/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/register/page.js"
+      "static/chunks/app/(main)/user/layout.js"
     ]
   }
 }
