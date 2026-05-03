@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { getMyBookings, type Booking } from "@/lib/api";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const STATUS_STYLES: Record<string, { bg: string; text: string; border: string }> = {
   PENDING: { bg: "bg-surface-container-highest", text: "text-tertiary", border: "border-tertiary/20" },
@@ -15,6 +16,16 @@ export default function UserPage() {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+    document.cookie = 'role=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+    router.push("/login");
+    router.refresh(); 
+  };
 
   useEffect(() => {
     async function fetchBookings() {
@@ -53,10 +64,25 @@ export default function UserPage() {
 
   return (
     <div className="space-y-12">
+      {/* Page Header */}
+      <div className="flex items-center justify-between pb-6 border-b border-outline-variant/10">
+        <div>
+          <h1 className="font-headline text-4xl font-black tracking-tight">Your Profile</h1>
+          <p className="text-sm text-on-surface-variant mt-1">Manage your appointments and history</p>
+        </div>
+        <button 
+          onClick={handleLogout}
+          className="flex items-center gap-2 px-4 py-2 bg-error/10 text-error rounded-lg font-label uppercase tracking-widest text-xs hover:bg-error/20 transition-colors"
+        >
+          <span className="material-symbols-outlined text-[18px]">logout</span>
+          Logout
+        </button>
+      </div>
+
       {/* Active Appointments */}
       <section>
         <div className="flex items-end justify-between mb-8">
-          <h2 className="font-headline text-3xl font-bold tracking-tight">Active Appointments</h2>
+          <h2 className="font-headline text-2xl font-bold tracking-tight">Active Appointments</h2>
           <Link className="text-primary text-sm font-bold tracking-wide uppercase hover:underline" href="/barbers">
             Book New
           </Link>

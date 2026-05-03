@@ -1,4 +1,8 @@
 {
+  "/(main)/barbers/page": "app/(main)/barbers/page.js",
   "/(main)/page": "app/(main)/page.js",
+  "/(main)/services/page": "app/(main)/services/page.js",
+  "/(main)/about/page": "app/(main)/about/page.js",
+  "/(main)/gallery/page": "app/(main)/gallery/page.js",
   "/(main)/user/page": "app/(main)/user/page.js"
 }
