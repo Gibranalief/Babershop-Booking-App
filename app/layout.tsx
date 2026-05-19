@@ -6,7 +6,11 @@ const manrope = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"], variable: '--font-inter' });
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   title: "The Atelier",
+=======
+  title: "The Midnight Atelier",
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
   description: "Premium Barbering",
 };
 

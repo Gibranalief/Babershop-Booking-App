@@ -56,7 +56,10 @@ export declare class BarbersController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
+<<<<<<< HEAD
             bookingId: string | null;
+=======
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
         }[];
     } & {
         id: string;

@@ -73,7 +73,11 @@ model Service {
   barberId  String
   barber    Barber    @relation(fields: [barberId], references: [id], onDelete: Cascade)
   name      String
+<<<<<<< HEAD
   duration  Int // duration in minutes
+=======
+  duration  Int       // duration in minutes
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
   price     Float
   bookings  Booking[]
   createdAt DateTime  @default(now())
@@ -89,11 +93,18 @@ model Schedule {
   barberId  String
   barber    Barber     @relation(fields: [barberId], references: [id], onDelete: Cascade)
   date      DateTime   @db.Date
+<<<<<<< HEAD
   startTime String // e.g. "09:00"
   endTime   String // e.g. "10:00"
   status    SlotStatus @default(AVAILABLE)
   bookingId String?
   booking   Booking?   @relation(fields: [bookingId], references: [id])
+=======
+  startTime String     // e.g. "09:00"
+  endTime   String     // e.g. "10:00"
+  status    SlotStatus @default(AVAILABLE)
+  booking   Booking?
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
 
@@ -104,6 +115,7 @@ model Schedule {
 // ─── Booking ────────────────────────────────────────────────
 
 model Booking {
+<<<<<<< HEAD
   id        String  @id @default(uuid())
   userId    String
   user      User    @relation(fields: [userId], references: [id])
@@ -118,6 +130,21 @@ model Booking {
   notes     String?
   createdAt DateTime      @default(now())
   updatedAt DateTime      @updatedAt
+=======
+  id         String        @id @default(uuid())
+  userId     String
+  user       User          @relation(fields: [userId], references: [id])
+  barberId   String
+  barber     Barber        @relation(fields: [barberId], references: [id])
+  serviceId  String
+  service    Service       @relation(fields: [serviceId], references: [id])
+  scheduleId String        @unique
+  schedule   Schedule      @relation(fields: [scheduleId], references: [id])
+  status     BookingStatus @default(PENDING)
+  notes      String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 
   @@map("bookings")
 }

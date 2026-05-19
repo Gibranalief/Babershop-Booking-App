@@ -16,6 +16,7 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+<<<<<<< HEAD
     "/(main)/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -36,6 +37,8 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/user/layout.js"
     ],
+=======
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     "/(main)/barbers/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -46,6 +49,7 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/barbers/[id]/page.js"
     ],
+<<<<<<< HEAD
     "/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -75,6 +79,12 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/booking/page.js"
+=======
+    "/(main)/services/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/services/page.js"
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     ],
     "/(main)/gallery/page": [
       "static/chunks/webpack.js",
@@ -85,6 +95,24 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/about/page.js"
+<<<<<<< HEAD
+=======
+    ],
+    "/(main)/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/login/page.js"
+    ],
+    "/(main)/user/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/user/page.js"
+    ],
+    "/(main)/user/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/user/layout.js"
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     ]
   }
 }
