@@ -1,0 +1,541 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Atelier - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#374c56",
+              "inverse-on-surface": "#2f3133",
+              "on-error": "#690005",
+              "inverse-primary": "#004ee8",
+              "on-secondary-fixed-variant": "#354a53",
+              "on-tertiary-container": "#4f3d00",
+              "on-background": "#e2e2e5",
+              "surface-container-low": "#1a1c1e",
+              "on-secondary-fixed": "#071e27",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-surface-variant": "#c3c5d8",
+              error: "#ffb4ab",
+              "surface-container": "#1e2022",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#dce1ff",
+              "on-surface": "#e2e2e5",
+              "error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#574500",
+              "surface-tint": "#b6c4ff",
+              "on-tertiary": "#3c2f00",
+              "surface-bright": "#38393c",
+              "inverse-surface": "#e2e2e5",
+              surface: "#121416",
+              "on-primary-fixed": "#001550",
+              secondary: "#b4cad6",
+              primary: "#b6c4ff",
+              "tertiary-fixed-dim": "#e9c349",
+              "tertiary-fixed": "#ffe088",
+              "outline-variant": "#434656",
+              "on-tertiary-fixed": "#241a00",
+              "on-secondary-container": "#a6bcc7",
+              "on-primary-fixed-variant": "#003ab3",
+              tertiary: "#e9c349",
+              "secondary-fixed": "#cfe6f2",
+              outline: "#8d90a2",
+              "on-secondary": "#1e333c",
+              "tertiary-container": "#cca730",
+              "surface-dim": "#121416",
+              "secondary-fixed-dim": "#b4cad6",
+              "surface-container-highest": "#333537",
+              "surface-container-high": "#282a2c",
+              "on-primary-container": "#f7f5ff",
+              "surface-container-lowest": "#0c0e10",
+              "primary-container": "#2962ff",
+              "surface-variant": "#333537",
+              "on-primary": "#002780",
+              background: "#121416",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-card {
+        background: rgba(41, 98, 255, 0.08);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- SideNavBar -->
+    <aside
+      class="fixed left-0 top-0 h-full w-64 bg-[#121416] flex flex-col py-10 px-6 shadow-[12px_0_24px_rgba(0,0,0,0.4)] z-50"
+    >
+      <div class="mb-10">
+        <h1
+          class="text-3xl font-black text-[#e2e2e5] font-headline tracking-tighter uppercase mb-0"
+        >
+          THE ATELIER
+        </h1>
+        <p
+          class="font-['Inter'] uppercase tracking-[0.1em] text-[10px] text-[#e2e2e5]/40 mt-1"
+          style=""
+        >
+          Premium Barbering
+        </p>
+      </div>
+      <nav class="flex-1 flex flex-col gap-2">
+        <!-- Active Tab: Overview -->
+        <a
+          class="flex items-center gap-4 text-[#e9c349] bg-[#282a2c] rounded-md px-4 py-3 transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span
+            class="material-symbols-outlined text-lg"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >dashboard</span
+          >
+          <span class="" style="">Overview</span>
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 rounded-md hover:bg-[#1a1c1e] hover:text-[#e2e2e5] transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined text-lg" style=""
+            >calendar_today</span
+          >
+          <span class="" style="">Schedule</span>
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 rounded-md hover:bg-[#1a1c1e] hover:text-[#e2e2e5] transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined text-lg" style=""
+            >content_cut</span
+          >
+          <span class="" style="">Services</span>
+        </a>
+        <a
+          class="flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 rounded-md hover:bg-[#1a1c1e] hover:text-[#e2e2e5] transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined text-lg" style=""
+            >event_note</span
+          >
+          <span class="" style="">Bookings</span>
+        </a>
+      </nav>
+      <div class="mt-auto pt-6 border-t border-outline-variant/10">
+        <button
+          class="w-full py-3 px-4 bg-primary-container text-on-primary-container rounded-lg font-bold text-xs uppercase tracking-widest hover:scale-95 transition-transform duration-200"
+          style=""
+        >
+          New Appointment
+        </button>
+        <a
+          class="mt-4 flex items-center gap-4 text-[#e2e2e5]/50 px-4 py-3 rounded-md hover:bg-[#1a1c1e] hover:text-[#e2e2e5] transition-all duration-300 ease-in-out font-['Inter'] uppercase tracking-[0.1em] text-xs"
+          href="#"
+          style=""
+        >
+          <span class="material-symbols-outlined text-lg" style="">logout</span>
+          <span class="" style="">Logout</span>
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 p-10 min-h-screen">
+      <!-- Dashboard Header Area (Relocated Profile/Utility) -->
+      <div class="flex justify-between items-start mb-12">
+        <div class="max-w-2xl">
+          <span
+            class="font-['Inter'] uppercase tracking-[0.2em] text-xs text-tertiary mb-2 block"
+            style=""
+            >Dashboard Overview</span
+          >
+          <h2
+            class="text-5xl font-extrabold font-headline tracking-tighter text-on-surface"
+            style=""
+          >
+            Welcome back,
+            <span class="text-primary-fixed-dim" style="">Barber A</span>.
+          </h2>
+          <p class="mt-4 text-on-surface-variant font-light text-lg" style="">
+            Precision is in the details. You have 8 appointments confirmed for
+            today's session.
+          </p>
+        </div>
+        <div class="flex items-center gap-6 pt-2">
+          <div class="relative group">
+            <span
+              class="material-symbols-outlined text-[#e2e2e5]/60 hover:text-[#2962ff] transition-colors cursor-pointer"
+              style=""
+              >notifications</span
+            >
+            <span
+              class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"
+            ></span>
+          </div>
+          <span
+            class="material-symbols-outlined text-[#e2e2e5]/60 hover:text-[#2962ff] transition-colors cursor-pointer"
+            style=""
+            >settings</span
+          >
+          <div
+            class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/20 shadow-lg"
+          >
+            <img
+              alt="Barber Profile Avatar"
+              class="w-full h-full object-cover"
+              data-alt="Close up portrait of a professional barber with a well-groomed beard in a high-end salon setting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1iKVaR_hzw_eRiOclDGnMqWNSSjo4DNfb6XrB0wmahtBzdIYi8ml4HFAicIhw_WPgEAFJhkOwFVpUnFLgO3XZK8ELlgjE8nnjOnrKQqB-Hinkst0_9hQVnxgLdJxD8MweJIgehIZU56w-UozQtZVTLK_S95A3S82lLnM8kd59y-iUGJjPFQTXEplqi8yKx-8qCRlrslrfw-eM5ixPsyb6MQqamstgHTWRHHnPnVN027LlP4WXJ_nKjxjJKKRpyit1pb7UIQsJ0Bs"
+              style=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Quick Stats Section -->
+      <section class="mb-12 flex flex-col md:flex-row gap-6">
+        <div
+          class="bg-surface-container-low p-6 rounded-xl min-w-[200px] flex-1 border-l-4 border-primary"
+        >
+          <p
+            class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 font-semibold"
+            style=""
+          >
+            Total Bookings Today
+          </p>
+          <p class="text-3xl font-bold font-headline" style="">12</p>
+        </div>
+        <div
+          class="bg-surface-container-low p-6 rounded-xl min-w-[200px] flex-1 border-l-4 border-tertiary"
+        >
+          <p
+            class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 font-semibold"
+            style=""
+          >
+            Remaining Slots
+          </p>
+          <p class="text-3xl font-bold font-headline" style="">04</p>
+        </div>
+        <div
+          class="bg-surface-container-low p-6 rounded-xl min-w-[200px] flex-1 border-l-4 border-secondary"
+        >
+          <p
+            class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 font-semibold"
+            style=""
+          >
+            Active Hours
+          </p>
+          <p class="text-3xl font-bold font-headline" style="">08</p>
+        </div>
+      </section>
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-12 gap-6">
+        <!-- Appointments List (Editorial Style) -->
+        <div class="col-span-12 lg:col-span-8">
+          <div
+            class="bg-surface-container-low rounded-xl overflow-hidden shadow-xl"
+          >
+            <div
+              class="px-8 py-6 flex justify-between items-center border-b border-outline-variant/5"
+            >
+              <h3
+                class="font-headline font-bold text-xl uppercase tracking-tight"
+                style=""
+              >
+                Today's Schedule
+              </h3>
+              <button
+                class="text-xs uppercase tracking-widest text-primary font-bold hover:underline"
+                style=""
+              >
+                View Calendar
+              </button>
+            </div>
+            <div class="divide-y divide-outline-variant/5">
+              <!-- Appointment Item 1 -->
+              <div
+                class="px-8 py-6 flex items-center group hover:bg-surface-container-high transition-colors"
+              >
+                <div
+                  class="w-16 text-center border-r border-outline-variant/10 pr-6 mr-6"
+                >
+                  <p class="text-lg font-bold font-headline" style="">09:00</p>
+                  <p
+                    class="text-[10px] text-on-surface-variant uppercase"
+                    style=""
+                  >
+                    AM
+                  </p>
+                </div>
+                <div class="flex-1 flex items-center gap-4">
+                  <img
+                    alt="Client"
+                    class="w-12 h-12 rounded-lg object-cover"
+                    data-alt="Headshot of a stylish young man with a modern haircut against a neutral background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq-cQ0thx8bUAAsCd57CB-HBsT-g_FkIWtIgV7fH2giy6fXkzbXTNIErVUCjVsUxR2fT7-nuQbZtrxDDjkzjSE1u9sOWOjCBBsm-PB7B7HE5By0Flpo9o8WP79yOe3UBwBXuM4Q3-dS9HknxIlBcIToIKkshJICxdj0MLdCnxhCVN22dpc4upi_x8OZTA0fral2fL5sWIOYonkyNJsnE6bXyXW79qXh5cDCfAEMPztWHs6zryUDnFxmk0GNL98nvnZhGPsFMF3VVU"
+                    style=""
+                  />
+                  <div>
+                    <h4 class="font-bold text-[#e2e2e5]" style="">
+                      Marcus Chen
+                    </h4>
+                    <p class="text-xs text-on-surface-variant" style="">
+                      Classic Taper Fade + Beard Sculpt
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-8">
+                  <div
+                    class="px-3 py-1 bg-primary/10 text-primary-fixed-dim text-[10px] font-bold uppercase tracking-widest rounded-full"
+                    style=""
+                  >
+                    CONFIRMED
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    style=""
+                    >more_vert</span
+                  >
+                </div>
+              </div>
+              <!-- Appointment Item 2 -->
+              <div
+                class="px-8 py-6 flex items-center group hover:bg-surface-container-high transition-colors"
+              >
+                <div
+                  class="w-16 text-center border-r border-outline-variant/10 pr-6 mr-6"
+                >
+                  <p class="text-lg font-bold font-headline" style="">10:30</p>
+                  <p
+                    class="text-[10px] text-on-surface-variant uppercase"
+                    style=""
+                  >
+                    AM
+                  </p>
+                </div>
+                <div class="flex-1 flex items-center gap-4">
+                  <img
+                    alt="Client"
+                    class="w-12 h-12 rounded-lg object-cover"
+                    data-alt="Professional man with short hair and glasses smiling warmly in outdoor lighting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCin5iYOrAkmhEBl16I9Y6RwhuwAyNB8LA2iKZ0vO-9QGAfF0TlBgqD19u8rwpJ4imdiRdiE4zAK0pD86u35DUo2Y8NBQoblV24p7xjyF34di-V0ygxfUMQue12eBSQpJd5zXl69Z7sEjjpwPykwddyO6yk104DqcG_9CAAh1eSVkpfcJuA7-vfiI33MP-ZIvzR3r00Zaqn5FRA1VR9dU8DkvY8K6ZWYXv52qKAl4l4w5nfKC4y2CohsXZU6MmoTjbipUBDBW_IhJw"
+                    style=""
+                  />
+                  <div>
+                    <h4 class="font-bold text-[#e2e2e5]" style="">
+                      Julian Vane
+                    </h4>
+                    <p class="text-xs text-on-surface-variant" style="">
+                      Signature Atelier Cut
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-8">
+                  <div
+                    class="px-3 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-widest rounded-full"
+                    style=""
+                  >
+                    PENDING
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    style=""
+                    >more_vert</span
+                  >
+                </div>
+              </div>
+              <!-- Appointment Item 3 -->
+              <div
+                class="px-8 py-6 flex items-center group hover:bg-surface-container-high transition-colors"
+              >
+                <div
+                  class="w-16 text-center border-r border-outline-variant/10 pr-6 mr-6"
+                >
+                  <p class="text-lg font-bold font-headline" style="">12:00</p>
+                  <p
+                    class="text-[10px] text-on-surface-variant uppercase"
+                    style=""
+                  >
+                    PM
+                  </p>
+                </div>
+                <div class="flex-1 flex items-center gap-4">
+                  <img
+                    alt="Client"
+                    class="w-12 h-12 rounded-lg object-cover"
+                    data-alt="Portrait of a black man with a sharp buzz cut and clean shaven face"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMkrEc7YCz9XAWteBZZtiOdl6O8vGy61U3W87Bm3PHnhosQMSrNlUGAXUC4D5Djz8XzoIDQBavDfHQ1dWw7p20dHx9_M_ARmg3_rdNjF4Fv75EBURz420GFc6qFP-7yj4yOZvk2TDKGefzuMqau9DeEVbbvPleM1EtVv_SV58cwLQEFsAZYSi86IiDXBDrEwEVPFtXFUPtTJPDpLPbccUoUJEIE3DTF9WBIh8p-WnWLNIjesY2FhAO-guKASPKzbmhSa64_o9W_oQ"
+                    style=""
+                  />
+                  <div>
+                    <h4 class="font-bold text-[#e2e2e5]" style="">
+                      David Okoro
+                    </h4>
+                    <p class="text-xs text-on-surface-variant" style="">
+                      Buzz Cut + Hot Towel Shave
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-8">
+                  <div
+                    class="px-3 py-1 bg-primary/10 text-primary-fixed-dim text-[10px] font-bold uppercase tracking-widest rounded-full"
+                    style=""
+                  >
+                    CONFIRMED
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    style=""
+                    >more_vert</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column Sidebar Info -->
+        <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+          <!-- Performance Card -->
+          <div
+            class="bg-surface-container-high p-8 rounded-xl relative overflow-hidden shadow-xl"
+          >
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+              <span
+                class="material-symbols-outlined text-6xl"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >trending_up</span
+              >
+            </div>
+            <h4
+              class="font-headline font-bold text-lg mb-6 uppercase tracking-tight"
+              style=""
+            >
+              Today's Revenue
+            </h4>
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold font-headline" style=""
+                >$480.00</span
+              >
+              <span class="text-tertiary text-xs font-bold" style=""
+                >+12% vs last week</span
+              >
+            </div>
+            <p class="text-on-surface-variant text-sm mt-2 font-light" style="">
+              Estimated daily earnings based on confirmed bookings.
+            </p>
+          </div>
+          <!-- Featured Service (Prestige Style) -->
+          <div class="bg-[#282a2c] rounded-xl overflow-hidden group shadow-xl">
+            <div class="h-40 overflow-hidden">
+              <img
+                alt="Luxury Service"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="Close up of a barber performing a hot towel shave on a client with steam and professional tools"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJy-J63QLIbsgPTt1cHA3AFvAYI0-R2go9qLCSFKMS45m11h0vnJq0GHaWozTizb_ci8Dmq_AdAknS0u6XKNySbrxck0B8QENEejGz7s-PZnYiEosFQ2uhzba6h-0iME40EKY0C4yl2tzkg91r_Dx7dA5hjV0_urJEhtT9k2H9PVw4vYzIEK4Jv3ONTWiVJoO8L_YhTIKeSWR6I9gqA4PUzfXkXUPlUfKVD9G6IKftj9TPScReRvKl74GNvNICvy2_nkO0hgy4kgk"
+                style=""
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="text-[10px] uppercase tracking-[0.2em] text-tertiary font-bold mb-2 block"
+                style=""
+                >Service Spotlight</span
+              >
+              <h4 class="font-headline font-bold text-xl mb-2" style="">
+                The Royal Treatment
+              </h4>
+              <p
+                class="text-on-surface-variant text-xs font-light leading-relaxed mb-4"
+                style=""
+              >
+                60-minute session including steam, massage, and precision
+                styling. Preferred by 40% of today's clients.
+              </p>
+              <button
+                class="w-full py-2 bg-surface-container-lowest border border-outline-variant/20 rounded text-[10px] uppercase tracking-[0.15em] font-bold hover:bg-surface-container-highest transition-colors"
+                style=""
+              >
+                Adjust Availability
+              </button>
+            </div>
+          </div>
+          <!-- Map / Studio Location (Contextual) -->
+          <div class="bg-surface-container-low p-6 rounded-xl shadow-lg">
+            <div class="flex items-center justify-between mb-4">
+              <h4
+                class="font-headline font-bold text-xs uppercase tracking-widest"
+                style=""
+              >
+                Atelier Traffic
+              </h4>
+              <span class="text-[10px] text-on-surface-variant" style=""
+                >Live Status</span
+              >
+            </div>
+            <div
+              class="h-32 bg-surface-container-highest rounded flex items-center justify-center border border-outline-variant/10 relative"
+            >
+              <div
+                class="absolute inset-0 opacity-40 grayscale pointer-events-none"
+                data-alt="Stylized grayscale street map of an urban district with clean lines and minimal detail"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA86CK4GRSU2imzeBP7y3cbq8zCW1Ad5qbTWbuc97KFCRpgUZydew3QgwvDDmBibSRL9EvPr5P0FaGAXsf0kuGxgnqoPmJuCnGDuyGspe_QqW9YzeGJk7t8H1ToW5Qy51OS6W2GtmSvU6rUirC3rsNIY4THHyq4c_It3R3EAL9jJwReMHU62moMPHamSPV9Aotblt5eFzEH0NxL2QeDKcnvEZYbgn8i40xbZdlReQ4dkX5zFF4T-KZ26g_uQinKzZBmw0SONxFa7Jo&quot;);
+                "
+              ></div>
+              <span
+                class="relative z-10 text-[10px] font-bold uppercase bg-background px-3 py-1 rounded shadow-lg border border-primary/20"
+                style=""
+                >The Atelier District</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- FAB -->
+    <button
+      class="fixed bottom-8 right-8 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-[0_12px_24px_rgba(0,0,0,0.4)] flex items-center justify-center hover:scale-110 transition-transform duration-200 z-50"
+      style=""
+    >
+      <span class="material-symbols-outlined" style="">add</span>
+    </button>
+  </body>
+</html>

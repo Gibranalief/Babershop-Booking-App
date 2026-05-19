@@ -1,0 +1,8 @@
+{
+  "/dashboard/bookings/page": "app/dashboard/bookings/page.js",
+  "/(main)/booking/page": "app/(main)/booking/page.js",
+  "/(main)/barbers/[id]/page": "app/(main)/barbers/[id]/page.js",
+  "/(main)/barbers/page": "app/(main)/barbers/page.js",
+  "/(main)/page": "app/(main)/page.js",
+  "/(main)/user/page": "app/(main)/user/page.js"
+}

@@ -1,0 +1,576 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#ffdad6",
+              "inverse-surface": "#e2e2e5",
+              "on-tertiary-fixed": "#241a00",
+              "surface-variant": "#333537",
+              "on-error": "#690005",
+              "surface-container-lowest": "#0c0e10",
+              "on-tertiary": "#3c2f00",
+              "surface-container": "#1e2022",
+              "tertiary-fixed": "#ffe088",
+              "primary-container": "#2962ff",
+              "secondary-container": "#374c56",
+              "surface-tint": "#b6c4ff",
+              "on-secondary-fixed-variant": "#354a53",
+              "surface-dim": "#121416",
+              "on-secondary": "#1e333c",
+              "primary-fixed": "#dce1ff",
+              "on-tertiary-fixed-variant": "#574500",
+              "on-tertiary-container": "#4f3d00",
+              "surface-bright": "#38393c",
+              "on-secondary-container": "#a6bcc7",
+              "outline-variant": "#434656",
+              "on-secondary-fixed": "#071e27",
+              "on-primary-container": "#f7f5ff",
+              "on-background": "#e2e2e5",
+              error: "#ffb4ab",
+              "tertiary-container": "#cca730",
+              outline: "#8d90a2",
+              "surface-container-low": "#1a1c1e",
+              "error-container": "#93000a",
+              "on-primary-fixed-variant": "#003ab3",
+              "inverse-on-surface": "#2f3133",
+              "secondary-fixed": "#cfe6f2",
+              "tertiary-fixed-dim": "#e9c349",
+              "on-primary": "#002780",
+              "surface-container-highest": "#333537",
+              "on-surface-variant": "#c3c5d8",
+              "inverse-primary": "#004ee8",
+              "on-primary-fixed": "#001550",
+              tertiary: "#e9c349",
+              primary: "#b6c4ff",
+              "on-surface": "#e2e2e5",
+              "secondary-fixed-dim": "#b4cad6",
+              surface: "#121416",
+              "primary-fixed-dim": "#b6c4ff",
+              background: "#121416",
+              secondary: "#b4cad6",
+              "surface-container-high": "#282a2c",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+      }
+      body {
+        background-color: #121416;
+        color: #e2e2e5;
+      }
+    </style>
+  </head>
+  <body
+    class="font-body selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopAppBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#121416]/70 backdrop-blur-xl flex justify-between items-center px-8 h-20 w-full max-w-full"
+    >
+      <div
+        class="text-2xl font-black tracking-tighter text-[#e2e2e5] font-headline"
+      >
+        The Midnight Atelier
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          class="text-[#e2e2e5] font-medium hover:text-[#b6c4ff] transition-colors duration-300 font-label uppercase tracking-widest text-xs"
+          href="#"
+          >Barbers</a
+        >
+        <a
+          class="text-[#e2e2e5] font-medium hover:text-[#b6c4ff] transition-colors duration-300 font-label uppercase tracking-widest text-xs"
+          href="#"
+          >Services</a
+        >
+        <a
+          class="text-[#e2e2e5] font-medium hover:text-[#b6c4ff] transition-colors duration-300 font-label uppercase tracking-widest text-xs"
+          href="#"
+          >Gallery</a
+        >
+        <a
+          class="text-[#e2e2e5] font-medium hover:text-[#b6c4ff] transition-colors duration-300 font-label uppercase tracking-widest text-xs"
+          href="#"
+          >About</a
+        >
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="relative hidden sm:block">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm"
+            >search</span
+          >
+          <input
+            class="bg-surface-container-lowest border-none outline-none ring-1 ring-outline-variant/15 focus:ring-primary/50 rounded-xl py-2 pl-10 pr-4 text-sm w-48 transition-all"
+            placeholder="Search..."
+            type="text"
+          />
+        </div>
+        <button class="relative hover:text-primary transition-colors">
+          <span class="material-symbols-outlined">notifications</span>
+          <span
+            class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"
+          ></span>
+        </button>
+        <div
+          class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/20"
+        >
+          <img
+            alt="User profile"
+            data-alt="close-up portrait of a stylish man with a well-groomed beard in a dark studio setting with cinematic lighting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2vaiZlVmK7ODBI6SxDA_jQyH4cp_tZvapBikrbMRkVx-d3Vl5yIdXyo4s8KuC_WDQt8kK6gPNynw04aH7nLGz4j6kBjaTNSCcslaiD35d4UxqneYX7F0LuDWr4FMSjAbrYJwD93_IlHYhfwIOtVymVk9Y0rgOpJmb8nVFZ11OIV-O8IB96dWK2BnAHyQkLQjbjkmsKWlIwY79MmuYRCdqwDJwhEJnf2kugz23CceZLM5pFyqMpv9zFrqSfKjvmISo65QaFzJiz3M"
+          />
+        </div>
+      </div>
+    </nav>
+    <main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto min-h-screen">
+      <header class="mb-12">
+        <h1
+          class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-2"
+        >
+          Dashboard
+        </h1>
+        <p
+          class="text-on-surface-variant font-label tracking-widest uppercase text-sm"
+        >
+          Welcome back, Marcus
+        </p>
+      </header>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Main Content Area -->
+        <div class="lg:col-span-8 space-y-12">
+          <!-- Upcoming Bookings -->
+          <section>
+            <div class="flex items-end justify-between mb-8">
+              <h2 class="font-headline text-3xl font-bold tracking-tight">
+                Active Appointments
+              </h2>
+              <a
+                class="text-primary text-sm font-bold tracking-wide uppercase hover:underline"
+                href="#"
+                >View All</a
+              >
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Booking Card 1 -->
+              <div
+                class="bg-surface-container-high rounded-xl p-6 relative overflow-hidden group hover:bg-surface-container-highest transition-colors duration-300"
+              >
+                <div class="absolute top-0 right-0 p-4">
+                  <span
+                    class="bg-primary/15 text-primary-fixed-dim px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ring-1 ring-primary/20"
+                    >Confirmed</span
+                  >
+                </div>
+                <div class="flex items-center gap-4 mb-6">
+                  <div
+                    class="w-14 h-14 rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500"
+                  >
+                    <img
+                      alt="Barber A"
+                      data-alt="Portrait of a master barber in a white coat working in a vintage barbershop with soft bokeh background"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuB506dKPejpUj8vD1EkbmvNQk6dAk1mFfxupWaZIEH9a27DahB7HpM01GxMa3xsnJqYbbk1o9-ZqDxMZVgkPDiAL5Kpv1Q3yccPGKmQNshBVo60u-fhejEt1RjEvXvH3C1BK0lzDoRSnSrJZMtx3Gd-LU-Sqxk0LU1XUJRYIN7HbsOhmpt9BqHE_oxMIP7rG6Wt3akvTqkTC0S10T4Fd138m2R3h5v1flaKkHoPy-xWsbvNgVo5E70rtW5RaIPsBFhKaOUhFFhNU78"
+                    />
+                  </div>
+                  <div>
+                    <h3 class="font-headline font-bold text-lg text-on-surface">
+                      Barber A
+                    </h3>
+                    <p class="text-on-surface-variant text-sm">
+                      Classic Fade &amp; Line Up
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-xl"
+                      >calendar_today</span
+                    >
+                    <span class="text-on-surface font-medium"
+                      >Tomorrow, 13:00</span
+                    >
+                  </div>
+                  <button
+                    class="p-2 rounded-lg bg-surface-container-low hover:bg-error/10 hover:text-error transition-all"
+                  >
+                    <span class="material-symbols-outlined text-lg">close</span>
+                  </button>
+                </div>
+              </div>
+              <!-- Booking Card 2 -->
+              <div
+                class="bg-surface-container-high rounded-xl p-6 relative overflow-hidden group hover:bg-surface-container-highest transition-colors duration-300"
+              >
+                <div class="absolute top-0 right-0 p-4">
+                  <span
+                    class="bg-primary/15 text-primary-fixed-dim px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ring-1 ring-primary/20"
+                    >Confirmed</span
+                  >
+                </div>
+                <div class="flex items-center gap-4 mb-6">
+                  <div
+                    class="w-14 h-14 rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500"
+                  >
+                    <img
+                      alt="Barber C"
+                      data-alt="Close up of a professional barber focusing on detailing a haircut with precision tools"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5C-JiWq4hK_36TYG2mOx4P3PXUVivgF6fUCugqdwoXAhqMMS79zg_4mow4qR0VvT6TdvBfRTQr8IyT8LDQzM0DDyaDl4pxf6cYgzYJALzF8caEXKYwTD9knyzLcG78Z2gdgOIpJVwhXKB9T3ieBxtcfiNTSPMTFs0viVNhe_bn1m9RnbGc6_dzj_EkRwbEngEbXWO4KTSVDIVgxrUi09EtNzPY5l3iyP5Ss96SFl2tkwItdJOBNJUjSNUVX38edlBejpYngKwHk0"
+                    />
+                  </div>
+                  <div>
+                    <h3 class="font-headline font-bold text-lg text-on-surface">
+                      Barber C
+                    </h3>
+                    <p class="text-on-surface-variant text-sm">
+                      Beard Sculpt &amp; Steam
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-xl"
+                      >calendar_today</span
+                    >
+                    <span class="text-on-surface font-medium"
+                      >Friday, 10:30</span
+                    >
+                  </div>
+                  <button
+                    class="p-2 rounded-lg bg-surface-container-low hover:bg-error/10 hover:text-error transition-all"
+                  >
+                    <span class="material-symbols-outlined text-lg">close</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- History Section -->
+          <section>
+            <h2 class="font-headline text-3xl font-bold tracking-tight mb-8">
+              Recent History
+            </h2>
+            <div class="bg-surface-container-low rounded-2xl overflow-hidden">
+              <div class="flex flex-col">
+                <!-- History Item 1 -->
+                <div
+                  class="flex items-center justify-between p-6 hover:bg-surface-container transition-colors border-b border-outline-variant/10"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-outline"
+                        >history_edu</span
+                      >
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-on-surface">Barber B</h4>
+                      <p class="text-sm text-on-surface-variant">
+                        Hair Wash &amp; Treatment
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right hidden sm:block">
+                    <p class="font-bold text-on-surface">22 Oct, 15:00</p>
+                    <p
+                      class="text-xs text-tertiary font-bold tracking-widest uppercase"
+                    >
+                      Completed
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="text-on-surface font-bold">$45.00</span>
+                    <span class="material-symbols-outlined text-outline-variant"
+                      >chevron_right</span
+                    >
+                  </div>
+                </div>
+                <!-- History Item 2 -->
+                <div
+                  class="flex items-center justify-between p-6 hover:bg-surface-container transition-colors border-b border-outline-variant/10"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-outline"
+                        >history_edu</span
+                      >
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-on-surface">Barber A</h4>
+                      <p class="text-sm text-on-surface-variant">
+                        Signature Royal Cut
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right hidden sm:block">
+                    <p class="font-bold text-on-surface">05 Oct, 11:00</p>
+                    <p
+                      class="text-xs text-tertiary font-bold tracking-widest uppercase"
+                    >
+                      Completed
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="text-on-surface font-bold">$85.00</span>
+                    <span class="material-symbols-outlined text-outline-variant"
+                      >chevron_right</span
+                    >
+                  </div>
+                </div>
+                <!-- History Item 3 -->
+                <div
+                  class="flex items-center justify-between p-6 hover:bg-surface-container transition-colors"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-outline"
+                        >history_edu</span
+                      >
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-on-surface">Barber D</h4>
+                      <p class="text-sm text-on-surface-variant">
+                        Classic Shave
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right hidden sm:block">
+                    <p class="font-bold text-on-surface">14 Sep, 16:30</p>
+                    <p
+                      class="text-xs text-tertiary font-bold tracking-widest uppercase"
+                    >
+                      Completed
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="text-on-surface font-bold">$35.00</span>
+                    <span class="material-symbols-outlined text-outline-variant"
+                      >chevron_right</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Sidebar -->
+        <div class="lg:col-span-4 space-y-8">
+          <!-- Profile Card -->
+          <div
+            class="bg-surface-container-low rounded-2xl p-8 relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 -mr-4 -mt-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl"
+            ></div>
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-24 h-24 rounded-2xl overflow-hidden mb-6 ring-4 ring-primary/10"
+              >
+                <img
+                  alt="Profile big"
+                  data-alt="high quality portrait of a handsome man with modern hairstyle in a stylish dark minimalist setting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSKvbiGPX2reAxcGCnk_xN-MRjXzk3oUswXjwo8cDaH7j17K2YYBUuRYn9rNz4M5V2JBEMkZm7p-lIMz_mLbNhaZo-kpeN9aBXOc8FqEb35TWOTXkxQL_M9hbz0xf3OdUXMFI0VYaYVnx1Ts9vH_p3791KeOYAbmso_IeIOcl3EsqBjJKDDhy6xlKmH_H3NaFlBBOlL5XKcYwQ2cjb-7YBnJeesLWyOnMgA53PiHkytHV3gj0YI2nDfLm7MGM8A5iUZ9c76Qu4C38"
+                />
+              </div>
+              <h3 class="font-headline text-2xl font-bold text-on-surface mb-1">
+                Marcus Holloway
+              </h3>
+              <p
+                class="text-on-surface-variant text-sm font-label uppercase tracking-widest mb-6"
+              >
+                Platinum Member
+              </p>
+              <div class="grid grid-cols-2 gap-4 w-full">
+                <div
+                  class="bg-surface-container-lowest p-4 rounded-xl text-center"
+                >
+                  <p class="text-primary text-xl font-black">24</p>
+                  <p
+                    class="text-[10px] text-on-surface-variant font-bold uppercase tracking-tighter"
+                  >
+                    Total Visits
+                  </p>
+                </div>
+                <div
+                  class="bg-surface-container-lowest p-4 rounded-xl text-center"
+                >
+                  <p class="text-tertiary text-xl font-black">4.9</p>
+                  <p
+                    class="text-[10px] text-on-surface-variant font-bold uppercase tracking-tighter"
+                  >
+                    Style Rating
+                  </p>
+                </div>
+              </div>
+              <button
+                class="mt-8 w-full py-4 bg-primary-container text-on-primary-container font-bold rounded-xl hover:brightness-110 transition-all flex items-center justify-center gap-2 group"
+              >
+                <span>Edit Profile</span>
+                <span
+                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Loyalty Program Card -->
+          <div
+            class="bg-surface-container-highest rounded-2xl p-6 border border-tertiary/10"
+          >
+            <h4
+              class="font-headline font-bold text-lg mb-4 text-tertiary flex items-center gap-2"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >workspace_premium</span
+              >
+              Loyalty Rewards
+            </h4>
+            <p class="text-sm text-on-surface-variant mb-6">
+              3 more visits until your next
+              <span class="text-on-surface font-bold"
+                >Complimentary Deluxe Wash</span
+              >.
+            </p>
+            <div class="flex gap-2 mb-2">
+              <div class="h-1.5 flex-1 bg-tertiary rounded-full"></div>
+              <div class="h-1.5 flex-1 bg-tertiary rounded-full"></div>
+              <div class="h-1.5 flex-1 bg-tertiary rounded-full"></div>
+              <div class="h-1.5 flex-1 bg-tertiary rounded-full"></div>
+              <div class="h-1.5 flex-1 bg-tertiary rounded-full"></div>
+              <div class="h-1.5 flex-1 bg-surface-variant rounded-full"></div>
+              <div class="h-1.5 flex-1 bg-surface-variant rounded-full"></div>
+              <div class="h-1.5 flex-1 bg-surface-variant rounded-full"></div>
+            </div>
+            <p
+              class="text-[10px] text-right text-on-surface-variant font-bold uppercase tracking-widest"
+            >
+              5 / 8 Visits
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-[#0b0c0d] border-t border-[#434656]/15"
+    >
+      <div class="text-[#e2e2e5] font-black font-headline text-xl">
+        The Midnight Atelier
+      </div>
+      <p class="Inter body-sm text-[#434656] text-sm">
+        © 2024 The Midnight Atelier. All Rights Reserved.
+      </p>
+      <div class="flex gap-8">
+        <a
+          class="text-[#434656] hover:text-[#e2e2e5] transition-opacity duration-200 text-sm"
+          href="#"
+          >Privacy Policy</a
+        >
+        <a
+          class="text-[#434656] hover:text-[#e2e2e5] transition-opacity duration-200 text-sm"
+          href="#"
+          >Terms of Service</a
+        >
+        <a
+          class="text-[#434656] hover:text-[#e2e2e5] transition-opacity duration-200 text-sm"
+          href="#"
+          >Contact</a
+        >
+      </div>
+    </footer>
+    <!-- BottomNavBar (Mobile only) -->
+    <nav
+      class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#121416]/70 backdrop-blur-xl shadow-[0_-12px_24px_rgba(0,0,0,0.4)] rounded-t-2xl"
+    >
+      <a
+        class="flex flex-col items-center justify-center text-[#434656] px-4 py-2 hover:text-[#e2e2e5] transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined mb-1">home</span>
+        <span class="Inter text-[10px] font-bold uppercase tracking-widest"
+          >Home</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-[#434656] px-4 py-2 hover:text-[#e2e2e5] transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined mb-1">search</span>
+        <span class="Inter text-[10px] font-bold uppercase tracking-widest"
+          >Explore</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-[#434656] px-4 py-2 hover:text-[#e2e2e5] transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined mb-1">event_available</span>
+        <span class="Inter text-[10px] font-bold uppercase tracking-widest"
+          >Bookings</span
+        >
+      </a>
+      <a
+        class="flex flex-col items-center justify-center bg-[#2962ff]/15 text-[#b6c4ff] rounded-xl px-4 py-2"
+        href="#"
+      >
+        <span
+          class="material-symbols-outlined mb-1"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >person</span
+        >
+        <span class="Inter text-[10px] font-bold uppercase tracking-widest"
+          >Profile</span
+        >
+      </a>
+    </nav>
+  </body>
+</html>
