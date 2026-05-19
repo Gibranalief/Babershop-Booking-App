@@ -26,7 +26,11 @@ export declare class BookingsController {
             price: number;
             barberId: string;
         };
+<<<<<<< HEAD
+        schedules: {
+=======
         schedule: {
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -35,7 +39,12 @@ export declare class BookingsController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
+<<<<<<< HEAD
+            bookingId: string | null;
+        }[];
+=======
         };
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     } & {
         id: string;
         createdAt: Date;
@@ -43,9 +52,14 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
+<<<<<<< HEAD
+        notes: string | null;
+        serviceId: string;
+=======
         serviceId: string;
         scheduleId: string;
         notes: string | null;
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     }>;
     findMyBookings(userId: string): Promise<({
         barber: {
@@ -70,7 +84,11 @@ export declare class BookingsController {
             price: number;
             barberId: string;
         };
+<<<<<<< HEAD
+        schedules: {
+=======
         schedule: {
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -79,7 +97,12 @@ export declare class BookingsController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
+<<<<<<< HEAD
+            bookingId: string | null;
+        }[];
+=======
         };
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     } & {
         id: string;
         createdAt: Date;
@@ -87,9 +110,14 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
+<<<<<<< HEAD
+        notes: string | null;
+        serviceId: string;
+=======
         serviceId: string;
         scheduleId: string;
         notes: string | null;
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     })[]>;
     findBarberBookings(userId: string): Promise<({
         user: {
@@ -107,7 +135,11 @@ export declare class BookingsController {
             price: number;
             barberId: string;
         };
+<<<<<<< HEAD
+        schedules: {
+=======
         schedule: {
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -116,7 +148,12 @@ export declare class BookingsController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
+<<<<<<< HEAD
+            bookingId: string | null;
+        }[];
+=======
         };
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     } & {
         id: string;
         createdAt: Date;
@@ -124,9 +161,14 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
+<<<<<<< HEAD
+        notes: string | null;
+        serviceId: string;
+=======
         serviceId: string;
         scheduleId: string;
         notes: string | null;
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     })[]>;
     updateStatus(id: string, userId: string, dto: UpdateBookingStatusDto): Promise<{
         service: {
@@ -138,7 +180,11 @@ export declare class BookingsController {
             price: number;
             barberId: string;
         };
+<<<<<<< HEAD
+        schedules: {
+=======
         schedule: {
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -147,7 +193,12 @@ export declare class BookingsController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
+<<<<<<< HEAD
+            bookingId: string | null;
+        }[];
+=======
         };
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     } & {
         id: string;
         createdAt: Date;
@@ -155,9 +206,14 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
+<<<<<<< HEAD
+        notes: string | null;
+        serviceId: string;
+=======
         serviceId: string;
         scheduleId: string;
         notes: string | null;
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     }>;
     cancel(id: string, userId: string): Promise<{
         id: string;
@@ -166,8 +222,13 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
+<<<<<<< HEAD
+        notes: string | null;
+        serviceId: string;
+=======
         serviceId: string;
         scheduleId: string;
         notes: string | null;
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
     }>;
 }

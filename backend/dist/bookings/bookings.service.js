@@ -18,6 +18,26 @@ let BookingsService = class BookingsService {
     constructor(prisma) {
         this.prisma = prisma;
     }
+<<<<<<< HEAD
+    getNextHourSlots(startTime, durationMinutes) {
+        const slotsNeeded = Math.ceil(durationMinutes / 60);
+        const slots = [];
+        let [hours, minutes] = startTime.split(':').map(Number);
+        for (let i = 0; i < slotsNeeded; i++) {
+            const slotHour = (hours + i).toString().padStart(2, '0');
+            const slotMinute = minutes.toString().padStart(2, '0');
+            slots.push(`${slotHour}:${slotMinute}`);
+        }
+        return slots;
+    }
+    async create(userId, dto) {
+        return this.prisma.$transaction(async (tx) => {
+            const initialSchedule = await tx.schedule.findUnique({
+                where: { id: dto.scheduleId },
+            });
+            if (!initialSchedule) {
+                throw new common_1.NotFoundException('Initial schedule slot not found');
+=======
     async create(userId, dto) {
         return this.prisma.$transaction(async (tx) => {
             const slots = await tx.$queryRaw(client_1.Prisma.sql `
@@ -35,6 +55,7 @@ let BookingsService = class BookingsService {
             }
             if (slot.barberId !== dto.barberId) {
                 throw new common_1.ConflictException('Schedule slot does not belong to the selected barber');
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
             }
             const service = await tx.service.findFirst({
                 where: { id: dto.serviceId, barberId: dto.barberId },
@@ -42,8 +63,28 @@ let BookingsService = class BookingsService {
             if (!service) {
                 throw new common_1.NotFoundException('Service not found for this barber');
             }
+<<<<<<< HEAD
+            const requiredSlotTimes = this.getNextHourSlots(initialSchedule.startTime, service.duration);
+            const requiredSlots = await tx.schedule.findMany({
+                where: {
+                    barberId: dto.barberId,
+                    date: initialSchedule.date,
+                    startTime: { in: requiredSlotTimes },
+                },
+            });
+            if (requiredSlots.length !== requiredSlotTimes.length) {
+                throw new common_1.ConflictException('Not enough consecutive slots available for this service duration.');
+            }
+            const allAvailable = requiredSlots.every((slot) => slot.status === 'AVAILABLE');
+            if (!allAvailable) {
+                throw new common_1.ConflictException('One or more required time slots have already been booked.');
+            }
+            await tx.schedule.updateMany({
+                where: { id: { in: requiredSlots.map((s) => s.id) } },
+=======
             await tx.schedule.update({
                 where: { id: dto.scheduleId },
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                 data: { status: 'BOOKED' },
             });
             const booking = await tx.booking.create({
@@ -51,6 +92,17 @@ let BookingsService = class BookingsService {
                     userId,
                     barberId: dto.barberId,
                     serviceId: dto.serviceId,
+<<<<<<< HEAD
+                    notes: dto.notes,
+                    status: 'PENDING',
+                    schedules: {
+                        connect: requiredSlots.map((slot) => ({ id: slot.id })),
+                    },
+                },
+                include: {
+                    service: true,
+                    schedules: true,
+=======
                     scheduleId: dto.scheduleId,
                     notes: dto.notes,
                     status: 'PENDING',
@@ -58,6 +110,7 @@ let BookingsService = class BookingsService {
                 include: {
                     service: true,
                     schedule: true,
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                     barber: {
                         include: { user: { select: { name: true } } },
                     },
@@ -75,7 +128,13 @@ let BookingsService = class BookingsService {
             where: { userId },
             include: {
                 service: true,
+<<<<<<< HEAD
+                schedules: {
+                    orderBy: { startTime: 'asc' },
+                },
+=======
                 schedule: true,
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                 barber: {
                     include: { user: { select: { name: true } } },
                 },
@@ -95,7 +154,13 @@ let BookingsService = class BookingsService {
             include: {
                 user: { select: { id: true, name: true, email: true, phone: true } },
                 service: true,
+<<<<<<< HEAD
+                schedules: {
+                    orderBy: { startTime: 'asc' },
+                },
+=======
                 schedule: true,
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
             },
             orderBy: { createdAt: 'desc' },
         });
@@ -103,7 +168,11 @@ let BookingsService = class BookingsService {
     async updateStatus(id, userId, dto) {
         const booking = await this.prisma.booking.findUnique({
             where: { id },
+<<<<<<< HEAD
+            include: { barber: true, schedules: true },
+=======
             include: { barber: true },
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
         });
         if (!booking) {
             throw new common_1.NotFoundException('Booking not found');
@@ -112,8 +181,13 @@ let BookingsService = class BookingsService {
             throw new common_1.ForbiddenException('You can only manage your own bookings');
         }
         if (dto.status === 'CANCELLED') {
+<<<<<<< HEAD
+            await this.prisma.schedule.updateMany({
+                where: { id: { in: booking.schedules.map((s) => s.id) } },
+=======
             await this.prisma.schedule.update({
                 where: { id: booking.scheduleId },
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                 data: { status: 'AVAILABLE' },
             });
         }
@@ -122,13 +196,21 @@ let BookingsService = class BookingsService {
             data: { status: dto.status },
             include: {
                 service: true,
+<<<<<<< HEAD
+                schedules: true,
+=======
                 schedule: true,
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
             },
         });
     }
     async cancel(id, userId) {
         const booking = await this.prisma.booking.findUnique({
             where: { id },
+<<<<<<< HEAD
+            include: { schedules: true },
+=======
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
         });
         if (!booking) {
             throw new common_1.NotFoundException('Booking not found');
@@ -136,8 +218,13 @@ let BookingsService = class BookingsService {
         if (booking.userId !== userId) {
             throw new common_1.ForbiddenException('You can only cancel your own bookings');
         }
+<<<<<<< HEAD
+        await this.prisma.schedule.updateMany({
+            where: { id: { in: booking.schedules.map((s) => s.id) } },
+=======
         await this.prisma.schedule.update({
             where: { id: booking.scheduleId },
+>>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
             data: { status: 'AVAILABLE' },
         });
         return this.prisma.booking.update({
