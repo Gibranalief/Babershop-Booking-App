@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="pt-20">
+    <main>
       {/* Hero Section */}
       <section className="relative min-h-[870px] flex flex-col items-center justify-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">

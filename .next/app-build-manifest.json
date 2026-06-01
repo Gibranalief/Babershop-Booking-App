@@ -16,6 +16,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/(main)/barbers/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/barbers/page.js"
+    ],
     "/(main)/services/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -30,16 +35,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/about/page.js"
-    ],
-    "/(main)/barbers/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/barbers/page.js"
-    ],
-    "/(main)/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/login/page.js"
     ]
   }
 }
