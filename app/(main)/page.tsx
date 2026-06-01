@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-import Link from "next/link";
-
-export default function Home() {  
-  return (
-    <main>
-=======
 export default function Home() {
   return (
     <main className="pt-20">
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
       {/* Hero Section */}
       <section className="relative min-h-[870px] flex flex-col items-center justify-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -44,11 +36,7 @@ export default function Home() {
       </section>
 
       {/* Featured Barbers Section */}
-<<<<<<< HEAD
-      <section className="pb-24 px-8 bg-surface">
-=======
       <section className="py-24 px-8 bg-surface">
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-16">
             <div>
@@ -63,58 +51,20 @@ export default function Home() {
           {/* Bento-ish Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Barber Card 1 */}
-<<<<<<< HEAD
-           <div className="group relative w-full h-[450px] overflow-hidden rounded-2xl bg-surface-container-low cursor-pointer">
-              <div className="aspect-[4/5] relative">
-                <img
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[700ms] ease-in-out group-hover:scale-110"
-=======
             <div className="group relative bg-surface-container-high rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2">
               <div className="aspect-[4/5] relative">
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                   data-alt="professional barber with traditional tattoos cutting hair in a focused manner with vintage tools visible"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIQUEiJKoplxyHqFSpkOw7q8xKYAqP7uTrVDc8ICeNlKXlhIr4PoZ3_dE_nuhYUYB82z4DpHTG2UVe-VtJmIQUWwc7zlCoUDuwXELOvtogbYc00ncRAdacUH4ibVgYh0T-7XXvhT5Ehf4BusTxlin_YBAheJqBI2RpEdD5DiEcz8mEJdkynx1cFvVywMePqa98iJpafyhnaHrhIVoo2sTVvnluMuPfCqoMM_O6n85XIHHZ1sqdl365vkvU1Ba7fsxI5cw8Ufv08cg"
                   alt="Barber"
                 />
-<<<<<<< HEAD
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent pointer-events-none"></div>
-=======
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                 <div className="absolute top-4 left-4 bg-tertiary/90 text-on-tertiary px-3 py-1 rounded-full text-xs font-bold font-label uppercase tracking-wider flex items-center gap-1">
                   <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: '"FILL" 1' }}>star</span>
                   4.8
                 </div>
               </div>
-<<<<<<< HEAD
-              <div className="absolute bottom-0 w-full p-8 transition-transform duration-500 ease-out group-hover:-translate-y-2">
-                <h3 className="font-headline text-3xl font-bold text-on-surface mb-1">The Master Barber</h3>
-                <p className="text-primary font-label uppercase tracking-widest text-xs font-bold mb-4">Precision Fades • Beard Sculpting</p>
-                <Link 
-                  href="/gallery" 
-                  className="group relative inline-flex items-center justify-center px-8 py-4 font-label font-bold uppercase tracking-[0.2em] text-on-surface overflow-hidden border border-outline-variant/100 rounded-lg transition-all hover:border-primary"
-                >
-                  {/* The sliding gold background */}
-                  <div className="absolute inset-0 w-0 bg-primary transition-all duration-[400ms] ease-out group-hover:w-full"></div>
-                  
-                  {/* The text and icon */}
-                  <span className="relative z-10 flex items-center gap-3 transition-colors duration-300 group-hover:text-on-primary">
-                    View Portfolio
-                    <span className="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-x-2">
-                      arrow_forward
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-            {/* Barber Card 2 */}
-             <div className="group relative w-full h-[450px] overflow-hidden rounded-2xl bg-surface-container-low cursor-pointer">
-              <div className="aspect-[4/5] relative">
-                <img
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[700ms] ease-in-out group-hover:scale-110"
-=======
               <div className="p-6">
                 <h3 className="font-headline text-2xl font-bold text-on-surface mb-1">The Master Barber</h3>
                 <p className="text-on-surface-variant text-sm mb-6 uppercase tracking-widest font-label">Precision Fades • Beard Sculpting</p>
@@ -128,48 +78,16 @@ export default function Home() {
               <div className="aspect-[4/5] relative">
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                   data-alt="close up of a barber styling hair with extreme precision using scissors in a luxury barbershop setup"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYqlECzNFQJB7p-2PbJOoonDLlY5o5FAF5mBfsBR2bevbTstSJ0nlkfbq5tm9A_caCMdds-hbOuZuoy-s6pKe7gfAsFkMWKzWypOw_CnSYZJNQ8mhJjOgDZHTAP1AJSXlo1k-mFGimQaHB6_SSGkD5Y-imt4Wgy46Ruy7qsvwKP8bK1D6-BAHAJF_LBZhsQus3ccN04f_AZxXzLjCeOcd4nu3Aod0Tz-ToQahP9GCY6UWXowM_uU1TIvQQ2kpjKtpbmU65W8LJF9A"
                   alt="Barber"
                 />
-<<<<<<< HEAD
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent pointer-events-none"></div>
-=======
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                 <div className="absolute top-4 left-4 bg-tertiary/90 text-on-tertiary px-3 py-1 rounded-full text-xs font-bold font-label uppercase tracking-wider flex items-center gap-1">
                   <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: '"FILL" 1' }}>star</span>
                   4.7
                 </div>
               </div>
-<<<<<<< HEAD
-              <div className="absolute bottom-0 w-full p-8 transition-transform duration-500 ease-out group-hover:-translate-y-3">
-                <h3 className="text-3xl font-headline font-black text-on-surface mb-1">Classic Cuts</h3>
-                <p className="text-primary font-label uppercase tracking-widest text-xs font-bold mb-4">Traditional • Scissor Work</p>
-                <Link 
-                  href="/gallery" 
-                  className="group relative inline-flex items-center justify-center px-8 py-4 font-label font-bold uppercase tracking-[0.2em] text-on-surface overflow-hidden border border-outline-variant/100 rounded-lg transition-all hover:border-primary"
-                >
-                  {/* The sliding gold background */}
-                  <div className="absolute inset-0 w-0 bg-primary transition-all duration-[400ms] ease-out group-hover:w-full"></div>
-                  
-                  {/* The text and icon */}
-                  <span className="relative z-10 flex items-center gap-3 transition-colors duration-300 group-hover:text-on-primary">
-                    View Portfolio
-                    <span className="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-x-2">
-                      arrow_forward
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-            {/* Barber Card 3 */}
-             <div className="group relative w-full h-[450px] overflow-hidden rounded-2xl bg-surface-container-low cursor-pointer">
-              <div className="aspect-[4/5] relative">
-                <img
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[700ms] ease-in-out group-hover:scale-110"
-=======
               <div className="p-6">
                 <h3 className="font-headline text-2xl font-bold text-on-surface mb-1">Classic Cuts</h3>
                 <p className="text-on-surface-variant text-sm mb-6 uppercase tracking-widest font-label">Traditional • Scissor Work</p>
@@ -183,48 +101,22 @@ export default function Home() {
               <div className="aspect-[4/5] relative">
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                   data-alt="professional modern barber at work using a straight razor for a clean shave finish on a customer"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvWT-6r6u2cmgDoEmigJdPlDuK-MymtinPSOl45K85WXVDSgc6SI5uMWQhqT3R_IUe2lTcyFvtSU8wIplwKmDA_cfogj9b5CksoCoefqUTy7-4SiSWj41GTlo_j37Rnm_WCjbxk9Weewo_gjcMOFe6DuxDMw3WSa40rYiMjZg1AGb6AQ1E9xmtw8KRfDsp-PUNWndG7RFVK39qDn5pPsvktz21T31zkRl7BhB23736AqQj7uGjiZgdPnoBQNktPaf4YPWt7qSC5LU"
                   alt="Barber"
                 />
-<<<<<<< HEAD
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent pointer-events-none"></div>
-=======
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
                 <div className="absolute top-4 left-4 bg-tertiary/90 text-on-tertiary px-3 py-1 rounded-full text-xs font-bold font-label uppercase tracking-wider flex items-center gap-1">
                   <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: '"FILL" 1' }}>star</span>
                   4.9
                 </div>
               </div>
-<<<<<<< HEAD
-              <div className="absolute bottom-0 w-full p-8 transition-transform duration-500 ease-out group-hover:-translate-y-3">
-                <h3 className="text-3xl font-headline font-black text-on-surface mb-1">Elite Grooming</h3>
-                <p className="text-primary font-label uppercase tracking-widest text-xs font-bold mb-4">Luxury Shaves • Hot Towel</p>
-                <Link 
-                  href="/gallery" 
-                  className="group relative inline-flex items-center justify-center px-8 py-4 font-label font-bold uppercase tracking-[0.2em] text-on-surface overflow-hidden border border-outline-variant/100 rounded-lg transition-all hover:border-primary"
-                >
-                  {/* The sliding gold background */}
-                  <div className="absolute inset-0 w-0 bg-primary transition-all duration-[400ms] ease-out group-hover:w-full"></div>
-                  
-                  {/* The text and icon */}
-                  <span className="relative z-10 flex items-center gap-3 transition-colors duration-300 group-hover:text-on-primary">
-                    View Portfolio
-                    <span className="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-x-2">
-                      arrow_forward
-                    </span>
-                  </span>
-                </Link>
-=======
               <div className="p-6">
                 <h3 className="font-headline text-2xl font-bold text-on-surface mb-1">Elite Grooming</h3>
                 <p className="text-on-surface-variant text-sm mb-6 uppercase tracking-widest font-label">Luxury Shaves • Hot Towel</p>
                 <button className="w-full bg-surface-container-highest text-on-surface font-bold py-4 rounded-lg border border-outline-variant/15 transition-colors hover:bg-primary-container hover:text-on-primary-container hover:border-transparent">
                   View Portfolio
                 </button>
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
               </div>
             </div>
           </div>

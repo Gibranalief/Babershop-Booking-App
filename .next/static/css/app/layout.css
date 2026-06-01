@@ -1,6 +1,6 @@
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Manrope","arguments":[{"subsets":["latin"],"weight":["400","500","600","700","800"],"variable":"--font-manrope"}],"variableName":"manrope"} ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Manrope","arguments":[{"subsets":["latin"],"weight":["400","500","600","700","800"],"variable":"--font-manrope"}],"variableName":"manrope"} ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: '__Manrope_6b03d3';
@@ -275,9 +275,9 @@
 }.__variable_6b03d3 {--font-manrope: '__Manrope_6b03d3', '__Manrope_Fallback_6b03d3'
 }
 
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Inter","arguments":[{"subsets":["latin"],"weight":["300","400","500","600","700","800","900"],"variable":"--font-inter"}],"variableName":"inter"} ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Inter","arguments":[{"subsets":["latin"],"weight":["300","400","500","600","700","800","900"],"variable":"--font-inter"}],"variableName":"inter"} ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: '__Inter_472ac2';
@@ -1429,12 +1429,6 @@ input:where([type='file']):focus {
     background-color: #121416;
     color: #e2e2e5;
   }
-<<<<<<< HEAD
-.pointer-events-none {
-  pointer-events: none;
-}
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .visible {
   visibility: visible;
 }
@@ -1659,12 +1653,6 @@ input:where([type='file']):focus {
 .h-\[400px\] {
   height: 400px;
 }
-<<<<<<< HEAD
-.h-\[450px\] {
-  height: 450px;
-}
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .h-\[500px\] {
   height: 500px;
 }
@@ -1689,12 +1677,6 @@ input:where([type='file']):focus {
 .min-h-screen {
   min-height: 100vh;
 }
-<<<<<<< HEAD
-.w-0 {
-  width: 0px;
-}
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .w-1 {
   width: 0.25rem;
 }
@@ -1746,12 +1728,9 @@ input:where([type='file']):focus {
 .max-w-4xl {
   max-width: 56rem;
 }
-<<<<<<< HEAD
 .max-w-5xl {
   max-width: 64rem;
 }
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -1770,12 +1749,6 @@ input:where([type='file']):focus {
 .max-w-xs {
   max-width: 20rem;
 }
-<<<<<<< HEAD
-=======
-.max-w-5xl {
-  max-width: 64rem;
-}
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2050,12 +2023,6 @@ input:where([type='file']):focus {
 .border-outline-variant\/10 {
   border-color: rgb(67 70 86 / 0.1);
 }
-<<<<<<< HEAD
-.border-outline-variant\/100 {
-  border-color: rgb(67 70 86 / 1);
-}
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .border-outline-variant\/15 {
   border-color: rgb(67 70 86 / 0.15);
 }
@@ -2206,15 +2173,9 @@ input:where([type='file']):focus {
   --tw-gradient-to: rgb(18 20 22 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-<<<<<<< HEAD
-.from-background {
-  --tw-gradient-from: #121416 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(18 20 22 / 0) var(--tw-gradient-to-position);
-=======
 .from-surface-container-high {
   --tw-gradient-from: #282a2c var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(40 42 44 / 0) var(--tw-gradient-to-position);
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .from-surface\/20 {
@@ -2227,13 +2188,6 @@ input:where([type='file']):focus {
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-<<<<<<< HEAD
-.via-background\/40 {
-  --tw-gradient-to: rgb(18 20 22 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(18 20 22 / 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .via-surface\/30 {
   --tw-gradient-to: rgb(18 20 22 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(18 20 22 / 0.3) var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -2441,12 +2395,9 @@ input:where([type='file']):focus {
 .text-\[10px\] {
   font-size: 10px;
 }
-<<<<<<< HEAD
 .text-\[18px\] {
   font-size: 18px;
 }
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -2473,12 +2424,6 @@ input:where([type='file']):focus {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-<<<<<<< HEAD
-=======
-.text-\[18px\] {
-  font-size: 18px;
-}
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .font-black {
   font-weight: 900;
 }
@@ -2759,24 +2704,9 @@ input:where([type='file']):focus {
 .duration-700 {
   transition-duration: 700ms;
 }
-<<<<<<< HEAD
-.duration-\[400ms\] {
-  transition-duration: 400ms;
-}
-.duration-\[700ms\] {
-  transition-duration: 700ms;
-}
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.ease-out {
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-}
-=======
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .material-symbols-outlined {
     font-variation-settings:
       "FILL" 0,
@@ -2822,14 +2752,11 @@ input:where([type='file']):focus {
   color: rgb(141 144 162 / var(--tw-text-opacity, 1));
 }
 
-<<<<<<< HEAD
-=======
 .hover\:-translate-y-2:hover {
   --tw-translate-y: -0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .hover\:gap-3:hover {
   gap: 0.75rem;
 }
@@ -2850,14 +2777,8 @@ input:where([type='file']):focus {
   border-color: rgb(255 109 0 / 0.5);
 }
 
-<<<<<<< HEAD
-.hover\:border-primary:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(182 196 255 / var(--tw-border-opacity, 1));
-=======
 .hover\:border-transparent:hover {
   border-color: transparent;
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 }
 
 .hover\:bg-\[\#1a1c1e\]:hover {
@@ -2875,26 +2796,20 @@ input:where([type='file']):focus {
   background-color: rgb(255 180 171 / var(--tw-bg-opacity, 1));
 }
 
-<<<<<<< HEAD
 .hover\:bg-error\/20:hover {
   background-color: rgb(255 180 171 / 0.2);
 }
 
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(182 196 255 / var(--tw-bg-opacity, 1));
 }
 
-<<<<<<< HEAD
-=======
 .hover\:bg-primary-container:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(41 98 255 / var(--tw-bg-opacity, 1));
 }
 
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .hover\:bg-primary-container\/90:hover {
   background-color: rgb(41 98 255 / 0.9);
 }
@@ -2923,13 +2838,6 @@ input:where([type='file']):focus {
   background-color: rgb(51 53 55 / 0.8);
 }
 
-<<<<<<< HEAD
-=======
-.hover\:bg-error\/20:hover {
-  background-color: rgb(255 180 171 / 0.2);
-}
-
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .hover\:text-\[\#e2e2e5\]:hover {
   --tw-text-opacity: 1;
   color: rgb(226 226 229 / var(--tw-text-opacity, 1));
@@ -2950,14 +2858,11 @@ input:where([type='file']):focus {
   color: rgb(0 39 128 / var(--tw-text-opacity, 1));
 }
 
-<<<<<<< HEAD
-=======
 .hover\:text-on-primary-container:hover {
   --tw-text-opacity: 1;
   color: rgb(247 245 255 / var(--tw-text-opacity, 1));
 }
 
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .hover\:text-on-surface:hover {
   --tw-text-opacity: 1;
   color: rgb(226 226 229 / var(--tw-text-opacity, 1));
@@ -3021,28 +2926,6 @@ input:where([type='file']):focus {
   opacity: 0.5;
 }
 
-<<<<<<< HEAD
-.group:hover .group-hover\:w-full {
-  width: 100%;
-}
-
-.group:hover .group-hover\:-translate-y-2 {
-  --tw-translate-y: -0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:-translate-y-3 {
-  --tw-translate-y: -0.75rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:translate-x-2 {
-  --tw-translate-x: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .group:hover .group-hover\:translate-y-0 {
   --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3054,15 +2937,6 @@ input:where([type='file']):focus {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-<<<<<<< HEAD
-.group:hover .group-hover\:scale-110 {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .group:hover .group-hover\:scale-150 {
   --tw-scale-x: 1.5;
   --tw-scale-y: 1.5;
@@ -3084,14 +2958,6 @@ input:where([type='file']):focus {
   color: rgb(255 109 0 / var(--tw-text-opacity, 1));
 }
 
-<<<<<<< HEAD
-.group:hover .group-hover\:text-on-primary {
-  --tw-text-opacity: 1;
-  color: rgb(0 39 128 / var(--tw-text-opacity, 1));
-}
-
-=======
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
 .group:hover .group-hover\:text-primary {
   --tw-text-opacity: 1;
   color: rgb(182 196 255 / var(--tw-text-opacity, 1));

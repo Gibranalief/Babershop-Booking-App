@@ -1,4 +1,4 @@
-// File: C:\Users\gbrna\OneDrive\ドキュメント\SEM 4\The Atelier\app\(main)\login\page.tsx
+// File: /Users/crisssss/Babershop-Booking-App/app/(main)/login/page.tsx
 import * as entry from '../../../../../app/(main)/login/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

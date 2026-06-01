@@ -1,16 +1,8 @@
 {
-<<<<<<< HEAD
-  "/dashboard/bookings/page": "app/dashboard/bookings/page.js",
-  "/(main)/booking/page": "app/(main)/booking/page.js",
-  "/(main)/barbers/[id]/page": "app/(main)/barbers/[id]/page.js",
-  "/(main)/barbers/page": "app/(main)/barbers/page.js",
   "/(main)/page": "app/(main)/page.js",
-=======
-  "/(main)/barbers/page": "app/(main)/barbers/page.js",
-  "/(main)/page": "app/(main)/page.js",
-  "/(main)/services/page": "app/(main)/services/page.js",
-  "/(main)/about/page": "app/(main)/about/page.js",
   "/(main)/gallery/page": "app/(main)/gallery/page.js",
->>>>>>> 25d74ad2db122edfaa8f4eb40aa075a3922a41c0
-  "/(main)/user/page": "app/(main)/user/page.js"
+  "/(main)/services/page": "app/(main)/services/page.js",
+  "/(main)/login/page": "app/(main)/login/page.js",
+  "/(main)/barbers/page": "app/(main)/barbers/page.js",
+  "/(main)/about/page": "app/(main)/about/page.js"
 }
