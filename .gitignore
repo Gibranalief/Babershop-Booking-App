@@ -1,1 +1,13 @@
 node_modules/
+# Next.js build and cache
+.next/
+out/
+build/
+
+# NestJS / Backend compiled files
+backend/dist/
+backend/tsconfig.build.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
