@@ -26,7 +26,7 @@ export declare class BookingsController {
             price: number;
             barberId: string;
         };
-        schedule: {
+        schedules: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -35,7 +35,8 @@ export declare class BookingsController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
-        };
+            bookingId: string | null;
+        }[];
     } & {
         id: string;
         createdAt: Date;
@@ -43,9 +44,8 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     }>;
     findMyBookings(userId: string): Promise<({
         barber: {
@@ -70,7 +70,7 @@ export declare class BookingsController {
             price: number;
             barberId: string;
         };
-        schedule: {
+        schedules: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -79,7 +79,8 @@ export declare class BookingsController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
-        };
+            bookingId: string | null;
+        }[];
     } & {
         id: string;
         createdAt: Date;
@@ -87,9 +88,8 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     })[]>;
     findBarberBookings(userId: string): Promise<({
         user: {
@@ -107,7 +107,7 @@ export declare class BookingsController {
             price: number;
             barberId: string;
         };
-        schedule: {
+        schedules: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -116,7 +116,8 @@ export declare class BookingsController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
-        };
+            bookingId: string | null;
+        }[];
     } & {
         id: string;
         createdAt: Date;
@@ -124,9 +125,8 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     })[]>;
     updateStatus(id: string, userId: string, dto: UpdateBookingStatusDto): Promise<{
         service: {
@@ -138,7 +138,7 @@ export declare class BookingsController {
             price: number;
             barberId: string;
         };
-        schedule: {
+        schedules: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -147,7 +147,8 @@ export declare class BookingsController {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
-        };
+            bookingId: string | null;
+        }[];
     } & {
         id: string;
         createdAt: Date;
@@ -155,9 +156,8 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     }>;
     cancel(id: string, userId: string): Promise<{
         id: string;
@@ -166,8 +166,7 @@ export declare class BookingsController {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     }>;
 }

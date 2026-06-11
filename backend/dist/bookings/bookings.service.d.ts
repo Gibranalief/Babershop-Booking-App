@@ -1,9 +1,9 @@
 import { PrismaService } from '../prisma/prisma.service';
-import { CreateBookingDto, UpdateBookingStatusDto } from './dto/create-booking.dto';
 export declare class BookingsService {
     private prisma;
     constructor(prisma: PrismaService);
-    create(userId: string, dto: CreateBookingDto): Promise<{
+    private getNextHourSlots;
+    create(userId: string, dto: any): Promise<{
         barber: {
             user: {
                 name: string;
@@ -26,7 +26,7 @@ export declare class BookingsService {
             price: number;
             barberId: string;
         };
-        schedule: {
+        schedules: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -35,7 +35,8 @@ export declare class BookingsService {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
-        };
+            bookingId: string | null;
+        }[];
     } & {
         id: string;
         createdAt: Date;
@@ -43,9 +44,8 @@ export declare class BookingsService {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     }>;
     findMyBookings(userId: string): Promise<({
         barber: {
@@ -70,7 +70,7 @@ export declare class BookingsService {
             price: number;
             barberId: string;
         };
-        schedule: {
+        schedules: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -79,7 +79,8 @@ export declare class BookingsService {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
-        };
+            bookingId: string | null;
+        }[];
     } & {
         id: string;
         createdAt: Date;
@@ -87,9 +88,8 @@ export declare class BookingsService {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     })[]>;
     findBarberBookings(userId: string): Promise<({
         user: {
@@ -107,7 +107,7 @@ export declare class BookingsService {
             price: number;
             barberId: string;
         };
-        schedule: {
+        schedules: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -116,7 +116,8 @@ export declare class BookingsService {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
-        };
+            bookingId: string | null;
+        }[];
     } & {
         id: string;
         createdAt: Date;
@@ -124,11 +125,10 @@ export declare class BookingsService {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     })[]>;
-    updateStatus(id: string, userId: string, dto: UpdateBookingStatusDto): Promise<{
+    updateStatus(id: string, userId: string, dto: any): Promise<{
         service: {
             name: string;
             id: string;
@@ -138,7 +138,7 @@ export declare class BookingsService {
             price: number;
             barberId: string;
         };
-        schedule: {
+        schedules: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -147,7 +147,8 @@ export declare class BookingsService {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
-        };
+            bookingId: string | null;
+        }[];
     } & {
         id: string;
         createdAt: Date;
@@ -155,9 +156,8 @@ export declare class BookingsService {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     }>;
     cancel(id: string, userId: string): Promise<{
         id: string;
@@ -166,8 +166,7 @@ export declare class BookingsService {
         userId: string;
         barberId: string;
         status: import(".prisma/client").$Enums.BookingStatus;
-        serviceId: string;
-        scheduleId: string;
         notes: string | null;
+        serviceId: string;
     }>;
 }

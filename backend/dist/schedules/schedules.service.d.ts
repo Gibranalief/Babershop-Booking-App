@@ -12,6 +12,7 @@ export declare class SchedulesService {
         barberId: string;
         endTime: string;
         status: import(".prisma/client").$Enums.SlotStatus;
+        bookingId: string | null;
     }[]>;
     create(userId: string, dto: CreateScheduleDto): Promise<{
         id: string;
@@ -22,6 +23,7 @@ export declare class SchedulesService {
         barberId: string;
         endTime: string;
         status: import(".prisma/client").$Enums.SlotStatus;
+        bookingId: string | null;
     }>;
     bulkCreate(userId: string, dto: BulkCreateScheduleDto): Promise<{
         created: number;
@@ -36,6 +38,7 @@ export declare class SchedulesService {
         barberId: string;
         endTime: string;
         status: import(".prisma/client").$Enums.SlotStatus;
+        bookingId: string | null;
     }>;
     delete(id: string, userId: string): Promise<{
         id: string;
@@ -46,5 +49,6 @@ export declare class SchedulesService {
         barberId: string;
         endTime: string;
         status: import(".prisma/client").$Enums.SlotStatus;
+        bookingId: string | null;
     }>;
 }

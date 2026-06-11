@@ -56,6 +56,7 @@ export declare class BarbersService {
             barberId: string;
             endTime: string;
             status: import(".prisma/client").$Enums.SlotStatus;
+            bookingId: string | null;
         }[];
     } & {
         id: string;
